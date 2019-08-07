@@ -14,24 +14,32 @@ class Profile extends Component {
     super(props);
     this.state = {
       asanas: [],
+      allUsersList: [],
       ready: false,
     }
   }
 
-  componentDidMount() {
-    this.getAllAsanas();
-  }
-  
-  getAllAsanas = () => {
-    axios.get(`${process.env.REACT_APP_BASE}asanas`, {withCredentials: true})
-    .then(response => {
-      console.log(response)
-      this.setState({
-        asanas: response.data,
-        ready: true,
+  componentDidMount = () => {
+    axios.get(`${process.env.REACT_APP_BASE}asanas`)
+    .then(asanas => {
+      axios.get(`${process.env.REACT_APP_BASE}api/auth/getallusers`)
+      .then(users=> {
+        this.setState({
+          allUsersList: users.data,
+          asanas: asanas.data,
+          ready: true,
+        })
+      })
+      .catch(err=> {
+        console.log(err);
       })
     })
+    .catch(err=> {
+      console.log(err);
+    })
   }
+
+ 
 
   render() {
     return (
@@ -43,8 +51,11 @@ class Profile extends Component {
            <ProgressTracker currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
         <Subscription />
 
-        {(this.props.theUser.isAdmin && this.state.ready) &&<RoutineBuilder asanas={this.state.asanas} 
-        currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
+        {(this.props.theUser.isAdmin && this.state.ready) &&<RoutineBuilder 
+        asanas={this.state.asanas} 
+        currentUser={this.props.theUser}
+        allUsersList = {this.state.allUsersList} 
+        getCurrentUser = {this.props.getCurrentUser}/>}
 
         {this.state.ready && <DailyRoutine currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
         

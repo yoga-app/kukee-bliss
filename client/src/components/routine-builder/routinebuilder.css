@@ -10,3 +10,7 @@
   margin: 0 20px;
   width: 100px;
 }
+.user-picture {
+  width: 50px;
+  border-radius: 25px;
+}

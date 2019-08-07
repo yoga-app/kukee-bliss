@@ -94,11 +94,17 @@ class ProgressTracker extends Component {
     return this.state.listOfPendingUsers.map(eachU=> {
       return (
         <div className="each-alert not-paid" key={eachU._id}>
-          <div className="exclamation">!</div>
-          <a href="mailto:test"><b>{eachU.firstName} {eachU.lastName}</b> is interested in acquiring the <u>{eachU.package.type}</u> package with <u>{eachU.package.classesLeft} classes</u>.</a>
-          <p>({eachU.package.status})</p>
-          <button className="login-signup small-button" onClick={()=>{this.onCancel(eachU._id)}}>CANCEL</button>
-          <button className="login-signup small-button" onClick={()=>{this.onPaid(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>PAID</button>
+          <a href={"mailto:" + eachU.username}><b>{eachU.firstName} {eachU.lastName}</b> is interested in acquiring the <u>{eachU.package.type}</u> package with <u>{eachU.package.classesLeft} classes</u>.</a>
+          <div className="package-interest-info">
+            <div className="paid-pending-buttons">
+              <button className="login-signup small-button" onClick={()=>{this.onPaid(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>CHANGE TO PAID</button>
+              <button className="login-signup small-button" onClick={()=>{this.onCancel(eachU._id)}}>CANCEL</button>
+            </div>
+            <div className="pending">
+              <p className="exclamation">!</p>
+              <p>{eachU.package.status}</p>
+            </div>
+          </div>
         </div>
       )
     })
@@ -108,12 +114,17 @@ class ProgressTracker extends Component {
     return this.state.listOfPaidUsers.map(eachU=> {
       return (
         <div className="each-alert" key={eachU._id}>
-          <p>{eachU.firstName} {eachU.lastName} have paid for:</p>
-          <p>Level: {eachU.package.type}</p>
-          <p>Package for {eachU.package.classesLeft} classes</p>
-          <strong>Status: {eachU.package.status}</strong>
-          <button className="login-signup small-button" onClick={()=>{this.onCancel(eachU._id)}}>CANCEL</button>
-          <button className="login-signup small-button" onClick={()=>{this.onPending(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>PENDING</button>
+          <p><b>{eachU.firstName} {eachU.lastName}</b> has paid for the <u>{eachU.package.type}</u> package with <u>{eachU.package.classesLeft} classes</u>.</p>
+          <div className="package-interest-info">
+            <div className="paid-pending-buttons">
+              <button className="login-signup small-button" onClick={()=>{this.onPending(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>CHANGE TO PENDING</button>
+              <button className="login-signup small-button" onClick={()=>{this.onCancel(eachU._id)}}>CANCEL</button>
+            </div>
+            <div className="pending paid">
+              <p className="exclamation paid">✓</p>
+              <p>{eachU.package.status}</p>
+            </div>
+          </div>
         </div>
       )
     })
@@ -126,11 +137,15 @@ class ProgressTracker extends Component {
         {(this.state.listOfPaidUsers.length > 0 || this.state.listOfPendingUsers.length > 0) &&
           <div className="each-profile-section tracker">
             <div className="users-list-wrapper">
+
+          {this.state.listOfPendingUsers.length > 0 &&
               <div className="users-pending-wrapper">
-              {this.showPendingUsers()}
+                {this.showPendingUsers()}
               </div>
+          }
+
               <div className="users-paid-wrapper">
-              {this.showPaidUsers()}
+                {this.showPaidUsers()}
               </div>
             </div>
           </div>   

@@ -1,5 +1,24 @@
+.users-pending-wrapper {
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #a88874;
+}
+
 .users-list-wrapper {
   display: flex;
+  flex-direction: column;
+}
+
+.users-list-wrapper > div > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+}
+
+
+.users-pending-wrapper > div:nth-child(even), .users-paid-wrapper > div:nth-child(even) {
+  background-color: #f0e8e3;
 }
 
 .tracker {
@@ -12,9 +31,16 @@
   height: 30px;
   line-height: 30PX;
   text-align: center;
-  border: 4px solid red;
   color: red;
-  font-weight: 800;
+  border: 4px solid red;
+}
+
+.exclamation ~ p {
+  color: red;
+}
+
+.exclamation.paid ~ p {
+  color: green;
 }
 
 a {
@@ -23,4 +49,34 @@ a {
 
 .each-alert {
   display: flex;
+}
+
+.pending {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+}
+
+.pending > * {
+  margin: 0;
+}
+
+.package-interest-info {
+  display: flex;
+}
+
+.paid {
+  color: green;
+}
+
+.exclamation.paid {
+  border: 4px solid green;
+}
+
+.paid-pending-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }

@@ -20,7 +20,7 @@ class RoutineBuilder extends Component {
           this.addToRoutine(eachA._id, eachA.img_url, eachA.english_name, eachA.sanskrit_name)}}>
           <img src={eachA.img_url} alt="asana" className="daily-builder-asana"/>
           <p>{eachA.english_name}</p>
-          <p>{eachA.sanskrit_name}</p>
+          <small>{eachA.sanskrit_name}</small>
         </div>
       )
     })
@@ -101,8 +101,8 @@ class RoutineBuilder extends Component {
 
   render() {
     return (
-      <div className="temporary">
-        <small>[this is the <b>connected </b>Routine Builder component]</small><br />
+      <div className="each-profile-section routine-builder">
+        <h4>Routine Builder</h4>
         <div className="form-wrapper">
           <input name="description" onChange={this.handleInput} value={this.state.description} />
         </div>

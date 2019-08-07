@@ -45,10 +45,10 @@ class Profile extends Component {
     return (
       <div>
         <ProfileTop currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
-        <PrivateGallery currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
-
         {this.props.theUser && this.props.theUser.isAdmin &&
            <ProgressTracker currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
+        <PrivateGallery currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
+
         <Subscription />
 
         {(this.props.theUser.isAdmin && this.state.ready) &&<RoutineBuilder 

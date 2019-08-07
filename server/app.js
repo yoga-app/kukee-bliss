@@ -100,9 +100,9 @@ app.use('/testimonial', testimonialRoutes);
 const galleryItemsRoutes = require('./routes/GalleryRoutes');
 app.use('/galleryitem', galleryItemsRoutes);
 
-
 app.use((req, res, next) => {
   res.sendFile(__dirname + "/public/index.html");
 })
+
 
 module.exports = app;

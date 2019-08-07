@@ -31,7 +31,6 @@ onFormSubmit = (e) => {
   axios.post(`${process.env.REACT_APP_BASE}galleryitem/create`, formData, config)
   .then(response=> {
     this.props.updateGallery();
-    console.log(response);
   })
   .catch(err=> {
     console.log(err);

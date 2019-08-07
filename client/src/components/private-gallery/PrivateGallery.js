@@ -33,11 +33,15 @@ class PrivateGallery extends Component {
 
   render() {
     return (
-      <div className="gallery-flex gallery private-gallery">
-        <h4>Favorites</h4>
-        <div>
-          {this.showGalItems()}
-        </div>
+      <div>
+        {this.props.currentUser.favoritedItems.length > 0 &&
+          <div className="gallery-flex gallery private-gallery">
+            <h4>Favorites</h4>
+            <div>
+              {this.showGalItems()}
+            </div>
+          </div>
+        }
       </div>
     );
   }

@@ -1,3 +1,26 @@
 .users-list-wrapper {
   display: flex;
-} 
+}
+
+.tracker {
+  padding: 40px;
+}
+
+.exclamation {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  line-height: 30PX;
+  text-align: center;
+  border: 4px solid red;
+  color: red;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+}
+
+.each-alert {
+  display: flex;
+}

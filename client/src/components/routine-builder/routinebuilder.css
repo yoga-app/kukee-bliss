@@ -10,3 +10,37 @@
   margin: 0 20px;
   width: 100px;
 }
+
+.each-asana-builder-wrapper {
+  background-color: rgb(230, 243, 243);
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px gray;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  transition: all .1s;
+}
+
+.each-asana-builder-wrapper > p {
+  margin: 0;
+  position: relative;
+}
+
+.each-asana-builder-wrapper:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 10px 10px 20px gray;
+  transition: all .1s;
+  color: #000000;
+}
+
+/* .routine-builder {
+  display: flex;
+  flex-direction: column;
+} */

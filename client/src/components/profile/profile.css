@@ -3,3 +3,11 @@
   border-radius: 5px;
   background-color: #ecdbcb;
 }
+
+.each-profile-section h4 {
+  font-weight: 500;
+  font-size: 3.2rem;
+  margin: 0;
+  padding: 2rem 0 3.2rem 0;
+  text-align: center;
+}

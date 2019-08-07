@@ -1,0 +1,60 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  padding: 140px 100px 50px 100px;
+}
+
+.about-us > * {
+  width: 900px;
+  margin-bottom: 50px;
+}
+
+.about-us > :nth-child(odd) {
+  background-image: linear-gradient(to left, rgba(241, 203, 170, 0.600) 1%, rgba(241, 203, 170, 0.400) 30%, #00000000 70%);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.about-us > :nth-child(even) {
+  background-image: linear-gradient(to right, rgba(241, 203, 170, 0.600) 1%, rgba(241, 203, 170, 0.400) 30%, #00000000 70%);
+  border-radius: 10px;
+  text-align: left;
+  padding: 30px;
+}
+
+.live-your-happiness {
+  font-size: 2rem;
+}
+
+.map-wrap > *:nth-child(3) > * {
+  width: 650px !important;
+  height: 450px !important;
+}
+
+.contact-info {
+  margin-bottom: 1rem;
+}
+
+.contact-info > p {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.about-us h2 {
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.color-pallete {
+  /* accent: */
+  color: #6BD5D3;
+  color: #413B3D;
+  /* main: */
+  color: #DF917D;
+  color: #F1CBAA;
+  color: #FDF4F3;
+}

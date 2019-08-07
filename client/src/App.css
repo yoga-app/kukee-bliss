@@ -1,0 +1,41 @@
+.color-pallete {
+  /* accent: */
+  color: #6BD5D3;
+  color: #413B3D;
+
+  /* main: */
+  /* footer: */ color: #ecdbcb;
+  /* alternative: */ color: #F1CBAA;
+  /* color: #FDF4F3; */
+}
+
+*:focus {
+  outline: none;
+}
+
+.app {
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  font-size: 1.3rem;
+  color: #413B3D;
+}
+
+a:hover, button:hover {
+  color: rgb(86, 172, 170);
+}
+
+.temporary {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: fit-content;
+  max-height: fit-content;
+  border: 4px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+a {
+  color: #413B3D;
+  font-weight: 300;
+}

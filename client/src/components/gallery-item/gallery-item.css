@@ -1,0 +1,141 @@
+.gallery-card {
+  background-color: #ad692a7e;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 470px;
+  align-items: center;
+}
+
+.gallery-card h3 {
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+  top: -25px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 500;
+  background-color: rgba(65, 59, 61, 0.877);
+  margin: 0;
+  color: #ffffff;
+  width: 441px;
+}
+
+.gallery-category {
+  border-radius: 4px;
+  display: inline-block;
+  padding: .3rem .5rem;
+  color: #413B3D;
+  font-weight: 400;
+  background-color: #ecdbcb;
+  margin: 3px;
+  font-size: 14px;
+}
+
+.add-gallery-pic-or-vid {
+  border: 1px solid olivedrab;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.add-gallery-pic-or-vid > p {
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-video {
+  outline: 6px solid rgba(65, 59, 61, 0.336);
+}
+
+.gallery-image {
+  width: 447px;
+  outline: 6px solid rgba(65, 59, 61, 0.336);
+}
+
+.toggle-image-video-buttons > *:focus {
+  outline: none;
+}
+
+.form-add-video-image {
+  position: static;
+  width: 700px;
+}
+
+.image-video-button {
+  position: absolute;
+  top: 255px;
+  color: #413B3D;
+  background-color: #00000000;
+  border: 2px solid #413B3D;
+}
+
+.image-video-button:hover {
+  background-color: #413B3D;
+  color: #ecdbcb;
+}
+
+.form-add-video-image input {
+  width: 485px;
+  font-size: 1rem;
+}
+
+.liked {
+  color: #b91e1e;
+}
+
+.not-liked {
+  color: #d1beac;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+.liked:hover {
+  color: #5a391b;
+}
+
+.not-liked:hover {
+  color: #b91e1e;
+}
+
+.like-button {
+  position: relative;
+  left: 200px;
+  top: 10px;
+  background-color: #00000000;
+  border: none;
+  font-size: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.like-button-div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.delete-edit-buttons-gallery {
+  display: flex;
+  width: 105px;
+  justify-content: space-between;
+}
+
+.categories {
+  margin-bottom: 20px;
+}
+
+.edit-gallery-item {
+  margin-bottom: 50px;
+  position: absolute;
+  right: 50px;
+  z-index: 20;
+  background-color: #d1beac;
+}
+
+.edit-gallery-item .image-video-button {
+  top: 116px;
+}

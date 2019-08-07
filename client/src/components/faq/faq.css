@@ -1,0 +1,15 @@
+.faq {
+  padding: 130px 100px;
+}
+
+.faq h1 {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.add-faq-form {
+  width: 550px;
+  position: static;
+  padding-bottom: 50px;
+  margin-bottom: 70px;
+}

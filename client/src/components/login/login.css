@@ -1,0 +1,37 @@
+.form-login > * {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-login {
+  z-index: 2;
+  position: absolute;
+  left: 3vw;
+  top: 250px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  height: 155px;
+  background-color: rgba(241, 203, 170, 0.89);
+  padding: 30px;
+}
+
+.form-login input {
+  padding-left: 5px;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #413b3D;
+  width: 380px;
+  margin-left: 5px;
+  line-height: 2rem;
+  border: none;
+  background-color: #eee1d66b;
+  border-bottom: 1px solid #413B3D;
+}
+
+.form-login label {
+  font-size: 1.5rem;
+  padding-bottom: .3rem;
+}

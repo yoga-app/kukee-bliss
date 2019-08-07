@@ -1,0 +1,9 @@
+.daily-asana {
+  width: 50px;
+}
+.daily-asanas-wrapper {
+  display: flex;
+}
+.each-asana-wrapper {
+  margin: 0 15px;
+}

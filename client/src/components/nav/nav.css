@@ -1,0 +1,96 @@
+.nav-link {
+  text-decoration: none;
+  line-height: 100px;
+  display: flex;
+}
+
+.nav-link-active{
+  text-decoration: underline;
+}
+
+.nav-button {
+  background-color: #00000000;
+  border: none;
+  line-height: 100px;
+  font-size: 1.2rem;
+  font-weight: 100;
+  cursor: pointer;
+  color: #413B3D;  
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+nav {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(#f1cbaa 1%, #f1cbaab7 60%, #00000000 100%);
+}
+
+.nav-links {
+  letter-spacing: 0.05rem;
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  justify-self: flex-end;
+}
+
+.logo {
+  margin: 10px 30px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, #ffffff82 43%, #00000000 70%);
+  height: 30px;
+  width: 204px;
+}
+
+.kukee {
+  text-shadow: 5px 5px 8px #f5e7dc;
+  position: relative;
+  color: #4f8280;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.6rem;
+  word-spacing: -0.25rem;
+  letter-spacing: -0.09rem;
+}
+
+.kukee span {
+  word-spacing: -0.5rem;
+}
+
+
+.kukee-img {
+  width: 61px;
+}
+
+.profile-pic {
+  border: 4px solid #eed9c8;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  align-self: center;
+}
+
+.profile-pic:hover {
+  border: 4px solid #6BD5D3;
+}
+
+.profile > * {
+  margin-right: 20px;
+}
+
+.profile {
+  display: flex;
+  width: fit-content;
+}
+
+.logo-link {
+  text-decoration: none;
+}

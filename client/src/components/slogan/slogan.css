@@ -1,0 +1,27 @@
+.slogan {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1484452330304-377cdeb05340");
+  background-size: cover;
+  background-position: center;
+  color: #ecdbcb;
+  /* width: 100vw; */
+  height: 550px;
+  box-shadow: 0 -10px 10px rgba(128, 128, 128, 0.664);
+}
+
+.slogan h1 {
+  text-shadow: 1px 1px 5px #413B3D, -1px -1px 5px #413B3D;
+  font-size: 5rem;
+  letter-spacing: -.5rem;
+  transition: all 1s;
+}
+
+.slogan:hover h1 {
+  text-shadow: 1px 1px 30px #413B3D, -1px -1px 30px #413B3D;
+  letter-spacing: 1.3rem;
+  transition: all 1s;
+}

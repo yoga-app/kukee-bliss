@@ -1,0 +1,15 @@
+.private-gallery {
+  display: block !important;
+  text-align: center;
+  padding: 0 !important;
+  margin: 0 50px 50px 50px;
+  border-radius: 5px;
+  background-color: #ecdbcb;
+}
+
+.private-gallery h4 {
+  font-weight: 500;
+  font-size: 3.2rem;
+  margin: 0;
+  padding: 2rem 0 3.2rem 0;
+}

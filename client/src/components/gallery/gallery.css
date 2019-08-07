@@ -1,0 +1,20 @@
+.gallery {
+  padding: 140px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-flex {
+  padding: 140px 0;
+}
+
+.gallery-flex > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.gallery-flex > div > div {
+  margin: 10px;
+}

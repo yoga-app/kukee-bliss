@@ -1,0 +1,49 @@
+.login-signup {
+  line-height: 2.4rem;
+  height: 2.6rem;
+  background-color: #413B3D;
+  border: 2px solid #413B3D;
+  border-radius: 5px;
+  padding: 0 1rem;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.login-signup:hover {
+  cursor: pointer;
+  color: #413B3D;
+  background-color: #00000000;
+  border: 2px solid #413B3D;
+}
+
+.edit-profile-button {
+  line-height: 2rem;
+  height: 2.2rem;
+  background-color: #ac6f60;
+  border: 2px solid #ac6f60;
+  border-radius: 5px;
+  padding: 0 .6rem;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+.edit-profile-button:hover {
+  cursor: pointer;
+  color: #ac6f60;
+  background-color: #00000000;
+  border: 2px solid #ac6f60;
+}
+
+.small-button {
+  font-size: .7rem;
+  padding: 0 .3rem;
+  height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}

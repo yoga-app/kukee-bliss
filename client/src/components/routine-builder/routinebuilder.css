@@ -1,0 +1,12 @@
+.daily-builder-asana {
+  width: 70px;
+}
+.asanas-list-builder-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.each-asana-builder-wrapper {
+  margin: 0 20px;
+  width: 100px;
+}

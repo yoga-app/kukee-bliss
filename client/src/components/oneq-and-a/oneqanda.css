@@ -1,0 +1,46 @@
+.faq-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.oneqa > h3, .oneqa > p {
+  padding: .05rem;
+  border: 1px solid #00000000;
+}
+
+.faq-edit-form input, .faq-edit-form textarea {
+  font-size: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 1px solid #413B3D;
+  color: #413B3D;
+}
+
+.faq-edit-form input:focus, .faq-edit-form textarea:focus {
+  outline: none;
+}
+
+#question {
+  font-size: 1.17em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+}
+
+#answer {
+  font-weight: 100;
+  font-size: 1.3rem;
+  padding: .05rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 110px;
+}
+
+.eachqa {
+  margin-top: 2rem;
+}

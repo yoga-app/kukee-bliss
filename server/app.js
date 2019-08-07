@@ -66,7 +66,7 @@ app.use(passport.session());
 app.use(cors({
   credentials: true,
     // comment when deployed:
-  origin: ['http://localhost:3000']
+  origin: ['http://localhost:3000', 'https://kukee-bliss.herokuapp.com/']
     // change 'blah' and uncomment when deployed:
     // origin: ['http://localhost:3000', 'https://blah.herokuapp.com']
 
@@ -75,9 +75,6 @@ app.use(cors({
 // default value for title local
 app.locals.title = 'Kukee Bliss Yoga';
 
-app.use((req, res, next) => {
-  res.sendFile(__dirname + "/public/index.html");
-})
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -102,5 +99,10 @@ app.use('/testimonial', testimonialRoutes);
 
 const galleryItemsRoutes = require('./routes/GalleryRoutes');
 app.use('/galleryitem', galleryItemsRoutes);
+
+
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html");
+})
 
 module.exports = app;

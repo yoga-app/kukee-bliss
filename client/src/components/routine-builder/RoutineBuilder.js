@@ -6,7 +6,7 @@ class RoutineBuilder extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routine: [],
+      routineIds: [],
       description: '',
       currentRoutine: [],
       allUsersList: [],
@@ -36,12 +36,12 @@ class RoutineBuilder extends Component {
 
   assingToAll = () => {
     axios.post(`${process.env.REACT_APP_BASE}api/auth/update-daily-routine-for-all/`, {
-      routine: this.state.routine,
+      routine: this.state.routineIds,
       description: this.state.description,
     })
     .then(response=> {
       this.props.getCurrentUser();
-      this.setState({routine: [], currentRoutine: [], description: ''})
+      this.setState({routineIds: [], currentRoutine: [], description: ''})
     })
     .catch(err=> {
       console.log(err);
@@ -50,7 +50,7 @@ class RoutineBuilder extends Component {
 
   assingToUserById = (userId) => {
     axios.post(`${process.env.REACT_APP_BASE}api/auth/update-daily-routine/${userId}`, {
-      routine: this.state.routine,
+      routine: this.state.routineIds,
       description: this.state.description,
     })
     .then(response=> {
@@ -64,13 +64,28 @@ class RoutineBuilder extends Component {
   showCurrentRoutine = () => {
     return this.state.currentRoutine.map(eachR=>{
       return (
-        <div key={eachR._id} className="each-asana-builder-wrapper" >
+        <div key={eachR._id} className="each-asana-builder-wrapper" onClick={()=>{this.removeFromCurrent(eachR._id)}}>
           <img src={eachR.img_url} alt="asana" className="daily-builder-asana"/>
           <p>{eachR.english_name}</p>
           <p>{eachR.sanskrit_name}</p>
         </div>
       )
     })
+  }
+
+  removeFromCurrent = (id) => {
+    let currentRoutineClone = this.state.currentRoutine;
+    let routineIdsClone = this.state.routineIds;
+
+    let newRoutine = currentRoutineClone.filter(eachR => {
+      return eachR._id === id ? false : true
+    })
+
+    let newRoutineIds = routineIdsClone.filter(eachId => {
+      return eachId === id ? false : true
+    })
+    
+    this.setState({currentRoutine: newRoutine, routineIds: newRoutineIds})
   }
 
   addToRoutine = (id, uri, engName, sanName) => {
@@ -81,9 +96,9 @@ class RoutineBuilder extends Component {
       english_name: engName,
       sanskrit_name: sanName, 
     })
-    let clone = this.state.routine;
+    let clone = this.state.routineIds;
     clone.push(id)
-    this.setState({currentRoutine: temp, routine: clone})
+    this.setState({currentRoutine: temp, routineIds: clone})
   }
 
   showListOfUsers = () => {
@@ -98,6 +113,14 @@ class RoutineBuilder extends Component {
     })
   }
 
+  clearCurrentRoutine = () => {
+    this.setState({ 
+      routineIds: [],
+      description: '',
+      currentRoutine: []
+    })
+  }
+
 
   render() {
     return (
@@ -108,10 +131,11 @@ class RoutineBuilder extends Component {
         </div>
         <div className="asanas-list-builder-wrapper">
         <h5>Currently building:</h5>
-          {this.state.routine && 
+          {this.state.routineIds && 
             <div>
               <button onClick={this.assingToAll}>Assign to Everyone</button>
               <button onClick={this.toggleUserList}>Assign personally</button>
+              <button onClick={this.clearCurrentRoutine}>Clear current routine</button>
               <p>Description: {this.state.description}</p>
               <div className="asanas-list-builder-wrapper">
               {this.showCurrentRoutine()}

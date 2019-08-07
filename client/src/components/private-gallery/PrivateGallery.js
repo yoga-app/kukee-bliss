@@ -10,6 +10,8 @@ class PrivateGallery extends Component {
     else {return true}
   }
 
+
+  
   showGalItems() {
     this.props.getCurrentUser()
     return this.props.currentUser.favoritedItems.map(eachI=> {
@@ -34,8 +36,9 @@ class PrivateGallery extends Component {
   render() {
     return (
       <div>
+        {this.props.getCurrentUser()}
         {this.props.currentUser.favoritedItems.length > 0 &&
-          <div className="gallery-flex gallery private-gallery">
+          <div className="gallery-flex gallery private-gallery each-profile-section">
             <h4>Favorites</h4>
             <div>
               {this.showGalItems()}

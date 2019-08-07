@@ -28,7 +28,7 @@ onFormSubmit = (e) => {
   formData.append('video', this.state.video)
   formData.append('text', this.state.text)
   formData.append('category', this.state.category)
-  axios.post('http://localhost:5000/galleryitem/create', formData, config)
+  axios.post(`${process.env.REACT_APP_BASE}galleryitem/create`, formData, config)
   .then(response=> {
     this.props.updateGallery();
     console.log(response);

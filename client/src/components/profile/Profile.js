@@ -23,7 +23,7 @@ class Profile extends Component {
   }
   
   getAllAsanas = () => {
-    axios.get(`http://localhost:5000/asanas`, {withCredentials: true})
+    axios.get(`${process.env.REACT_APP_BASE}asanas`, {withCredentials: true})
     .then(response => {
       console.log(response)
       this.setState({

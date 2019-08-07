@@ -19,7 +19,7 @@ class AddFaq extends Component {
   onFormSubmit = (e) => {
     e.preventDefault();
     
-    axios.post('http://localhost:5000/faq/create', this.state)
+    axios.post(`${process.env.REACT_APP_BASE}faq/create`, this.state)
     .then(response=> {
       this.setState({question: '', answer: ''})
       this.props.update();

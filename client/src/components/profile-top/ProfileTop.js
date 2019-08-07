@@ -26,7 +26,7 @@ class ProfileTop extends Component {
   }
 
   submitForm() {
-    axios.post('http://localhost:5000/api/auth/updateuserinfo/'+this.props.currentUser._id, {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserinfo/`+this.props.currentUser._id, {
       firstName:this.state.firstName,
       lastName: this.state.lastName,
       username: this.state.username,
@@ -52,7 +52,7 @@ class ProfileTop extends Component {
   }
 
   fileUpload(file){
-    const url = 'http://localhost:5000/api/auth/updateuserinfo/'+this.props.currentUser._id;
+    const url = `${process.env.REACT_APP_BASE}api/auth/updateuserinfo/`+this.props.currentUser._id;
     const formData = new FormData();
     formData.append('picture',file)
     const config = {
@@ -150,7 +150,7 @@ class ProfileTop extends Component {
 
   deleteProfile = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/auth/deleteprofile/'+this.props.currentUser._id)
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/deleteprofile/`+this.props.currentUser._id)
     .then((response) => {
       console.log(response);
       this.props.getCurrentUser()

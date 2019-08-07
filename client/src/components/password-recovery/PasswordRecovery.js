@@ -17,7 +17,7 @@ class PasswordRecovery extends Component {
   
   handleFormSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/auth/forgot-pass', this.state)
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/forgot-pass`, this.state)
     .then(response => {
       console.log(response);
     })
@@ -28,7 +28,7 @@ class PasswordRecovery extends Component {
 
   onPasswordReset = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/auth/password-reset/'+ this.props.match.params.id, this.state)
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/password-reset/`+ this.props.match.params.id, this.state)
     .then(response => {
       console.log(response.data.message);
     })

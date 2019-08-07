@@ -32,7 +32,7 @@ submitEditForm = (e) => {
   this.state.video && formData.append('video', this.state.video)
   this.state.text && formData.append('text', this.state.text)
   this.state.category && formData.append('category', this.state.category)
-  axios.post('http://localhost:5000/galleryitem/updatebyid/'+this.props.id, formData, config)
+  axios.post(`${process.env.REACT_APP_BASE}galleryitem/updatebyid/`+this.props.id, formData, config)
   .then(response=> {
     this.props.updateGallery();
     this.setState({refresh: !this.state.refresh, isEditing: false})
@@ -126,7 +126,7 @@ componentDidMount ()  {
 }
 
 addLike = () => {
-  axios.post('http://localhost:5000/galleryitem/likebyid/'+this.props.id, {
+  axios.post(`${process.env.REACT_APP_BASE}galleryitem/likebyid/`+this.props.id, {
     direction: 'add',
     userID: this.props.theUser._id 
   })
@@ -138,7 +138,7 @@ addLike = () => {
     console.log(err);
   })
 
-  axios.post('http://localhost:5000/api/auth/updatefavorited/'+this.props.theUser._id, {
+  axios.post(`${process.env.REACT_APP_BASE}api/auth/updatefavorited/`+this.props.theUser._id, {
     direction: 'add',
     itemID: this.props.id
   })
@@ -152,7 +152,7 @@ addLike = () => {
 }
 
 removeLike = () => {
-  axios.post('http://localhost:5000/galleryitem/likebyid/'+this.props.id, {
+  axios.post(`${process.env.REACT_APP_BASE}galleryitem/likebyid/`+this.props.id, {
     direction: 'remove',
     userID: this.props.theUser._id 
   })
@@ -165,7 +165,7 @@ removeLike = () => {
     console.log(err);
   })
 
-  axios.post('http://localhost:5000/api/auth/updatefavorited/'+this.props.theUser._id, {
+  axios.post(`${process.env.REACT_APP_BASE}api/auth/updatefavorited/`+this.props.theUser._id, {
     direction: 'remove',
     itemID: this.props.id
   })
@@ -238,7 +238,7 @@ showCategory() {
 
 deleteGalItem = (e) =>{
   e.preventDefault();
-  axios.post('http://localhost:5000/galleryitem/deletebyid/'+this.props.id)
+  axios.post(`${process.env.REACT_APP_BASE}galleryitem/deletebyid/`+this.props.id)
   .then(()=> {
     this.props.updateGallery()
   })

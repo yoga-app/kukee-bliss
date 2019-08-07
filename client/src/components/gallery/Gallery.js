@@ -15,14 +15,14 @@ class Gallery extends Component {
   }
   
   componentDidMount() {
-    axios.get('http://localhost:5000/galleryitem/getall')
+    axios.get(`${process.env.REACT_APP_BASE}galleryitem/getall`)
     .then(allGalItems=> {
       this.setState({allGalItems: allGalItems.data, ready: true})
     })
   }
 
   updateGallery = () =>{
-    axios.get('http://localhost:5000/galleryitem/getall')
+    axios.get(`${process.env.REACT_APP_BASE}galleryitem/getall`)
     .then(allGalItems=> {
       this.setState({allGalItems: allGalItems.data})
     })

@@ -13,7 +13,7 @@ class OneQandA extends Component {
   }
 
   deleteQandA = () => {
-    axios.post('http://localhost:5000/faq/deletebyid/'+this.props.id)
+    axios.post(`${process.env.REACT_APP_BASE}faq/deletebyid/`+this.props.id)
     .then(()=> {
       this.props.update();
     })
@@ -35,7 +35,7 @@ class OneQandA extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/faq/updatebyid/'+this.props.id, this.state)
+    axios.post(`${process.env.REACT_APP_BASE}faq/updatebyid/`+this.props.id, this.state)
     .then(()=> {
       this.props.update()
       this.setState({isEditing: false})

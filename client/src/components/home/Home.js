@@ -20,9 +20,9 @@ class Home extends Component {
   }
   
   componentDidMount() {
-    axios.get('http://localhost:5000/quote/randomQuote')
+    axios.get(`${process.env.REACT_APP_BASE}quote/randomQuote`)
     .then((randomQuote)=> {
-      axios.get('http://localhost:5000/testimonial/getall')
+      axios.get(`${process.env.REACT_APP_BASE}testimonial/getall`)
       .then(allTestimonials=> {
         this.setState({quote: randomQuote.data, testimonials: allTestimonials.data, ready: true})
       })

@@ -14,7 +14,7 @@ class Faq extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:5000/faq/getall')
+    axios.get(`${process.env.REACT_APP_BASE}faq/getall`)
     .then(response=> {
       this.setState({ready: true, allFAQ: response.data})
     })
@@ -24,7 +24,7 @@ class Faq extends Component {
   }
   
   updateFaq =() => {
-    axios.get('http://localhost:5000/faq/getall')
+    axios.get(`${process.env.REACT_APP_BASE}faq/getall`)
     .then(response=> {
       this.setState({allFAQ: response.data})
     })

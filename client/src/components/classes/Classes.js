@@ -13,7 +13,7 @@ class Classes extends Component {
   
 
   addClassPackage(classesLeft, type) {
-    axios.post('http://localhost:5000/api/auth/updateuserpackage/'+this.props.theUser._id, {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/`+this.props.theUser._id, {
       status: 'pending',
       type: type, 
       classesLeft: classesLeft,
@@ -27,7 +27,7 @@ class Classes extends Component {
   }
 
   handleUndo = () => {
-    axios.post('http://localhost:5000/api/auth/updateuserpackage/'+this.props.theUser._id, {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/`+this.props.theUser._id, {
       status: '',
       type: '', 
       classesLeft: '',

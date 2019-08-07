@@ -28,7 +28,7 @@ class RoutineBuilder extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/auth/update-daily-routine-for-all/', this.state)
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/update-daily-routine-for-all/`, this.state)
     .then(response=> {
       this.props.getCurrentUser();
       this.setState({routine: [], description: ''})

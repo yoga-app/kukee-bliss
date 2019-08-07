@@ -14,7 +14,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/asanas')
+    axios.get(`${process.env.REACT_APP_BASE}asanas`)
     .then((response)=> {
       this.setState({allAsanas: response.data, ready: true})
     })

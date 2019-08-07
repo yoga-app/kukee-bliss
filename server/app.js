@@ -16,7 +16,7 @@ const session      = require('express-session');
 require('./config/passport');
 
 mongoose
-  .connect('mongodb://localhost/project-3-backend', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -75,7 +75,9 @@ app.use(cors({
 // default value for title local
 app.locals.title = 'Kukee Bliss Yoga';
 
-
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html");
+})
 
 const index = require('./routes/index');
 app.use('/', index);

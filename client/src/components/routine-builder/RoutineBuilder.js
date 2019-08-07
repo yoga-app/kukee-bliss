@@ -103,25 +103,34 @@ class RoutineBuilder extends Component {
     return (
       <div className="each-profile-section routine-builder">
         <h4>Routine Builder</h4>
-        <div className="form-wrapper">
-          <input name="description" onChange={this.handleInput} value={this.state.description} />
-        </div>
-        <div className="asanas-list-builder-wrapper">
-        <h5>Currently building:</h5>
-          {this.state.routine && 
-            <div>
-              <button onClick={this.assingToAll}>Assign to Everyone</button>
-              <button onClick={this.toggleUserList}>Assign personally</button>
-              <p>Description: {this.state.description}</p>
-              <div className="asanas-list-builder-wrapper">
-              {this.showCurrentRoutine()}
+        <div className="assigning-section">
+          <div className="form-wrapper">
+            <label>description:</label>
+            <input name="description" onChange={this.handleInput} value={this.state.description} />
+          </div>
+          <div className="asanas-list-builder-wrapper">
+            {this.state.routine && 
+              <div>
+                <div className="routine-description">
+                  <p>{this.state.description}</p>
+                </div>
+                <div className="asanas-list-builder-wrapper">
+                {this.showCurrentRoutine()}
+                <div>
+                  <button onClick={this.assingToAll}>Assign to Everyone</button>
+                  <button onClick={this.toggleUserList}>Assign personally</button>
+                </div>
+                </div>
+                <div className="all-users-list-wrapper">
+                  {this.state.showUserList && this.showListOfUsers()}
+                </div>
               </div>
-              <div className="all-users-list-wrapper">
-                {this.state.showUserList && this.showListOfUsers()}
-              </div>
-            </div>
-            }
+              }
+          </div>
         </div>
+
+
+
         <div className="asanas-list-builder-wrapper">
           <h5>All the asanas</h5>
           {this.showAllAsanas()}

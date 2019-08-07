@@ -48,3 +48,31 @@
   display: flex;
   flex-direction: column;
 } */
+
+.assigning-section {
+  background-color: #f0e7df;
+  margin: 0 50px 50px 50px;
+  padding: 40px 30px;
+  border-radius: 5px;
+  height: 400px;
+}
+
+.form-wrapper > input {
+  font-size: 1.4rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  width: 1060px;
+  height: 2rem;
+  margin-left: 10px;
+  padding-left: 7px;
+  border-radius: 5px;
+  color: #413B3D;
+  border: 1px solid #413B3D;
+}
+
+.routine-description {
+  height: fit-content;
+  min-height: 3rem;
+  /* min-height: 3rem; */
+  /* max-height: fit-content; */
+}

@@ -36,7 +36,6 @@ class App extends React.Component {
     this.service.currentUser()
     .then((theUser)=>{
       this.setState({currentlyLoggedIn: theUser})
-      console.log(this.state.currentlyLoggedIn)
     })
     .catch(()=>{
       this.setState({currentlyLoggedIn: null})
@@ -73,13 +72,9 @@ class App extends React.Component {
 
 
   render(){
-  // console.log('---------------',this.state);
 
     return (
       <div className="app">
-        {/* <div>
-          <Mandala />
-        </div> */}
         <Nav
           theUser = {this.state.currentlyLoggedIn} 
           pleaseLogOut = {()=> this.service.logout()}

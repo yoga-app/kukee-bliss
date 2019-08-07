@@ -13,7 +13,7 @@ class ProgressTracker extends Component {
   }
   
   componentDidMount() {
-    axios.get(`${process.env.REACT_APP_BASE}api/auth/getallusers`)
+    axios.get('http://localhost:5000/api/auth/getallusers')
     .then((response)=> {
       let temp = response.data.filter(eachU => {
         return (eachU.package && eachU.package.status === "pending")
@@ -29,7 +29,7 @@ class ProgressTracker extends Component {
   }
 
   updateUserList() {
-    axios.get(`${process.env.REACT_APP_BASE}api/auth/getallusers`)
+    axios.get('http://localhost:5000/api/auth/getallusers')
     .then((response)=> {
       let temp = response.data.filter(eachU => {
         return (eachU.package && eachU.package.status === "pending")
@@ -45,7 +45,7 @@ class ProgressTracker extends Component {
   }
 
   onCancel = (userID) => {
-    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/` + userID, {
+    axios.post('http://localhost:5000/api/auth/updateuserpackage/' + userID, {
       status: '',
       type: '', 
       classesLeft: '',
@@ -60,7 +60,7 @@ class ProgressTracker extends Component {
   }
 
   onPaid = (userID, type, classesLeft) => {
-    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/` + userID, {
+    axios.post('http://localhost:5000/api/auth/updateuserpackage/' + userID, {
       status: 'paid',
       type: type, 
       classesLeft: classesLeft,
@@ -75,7 +75,7 @@ class ProgressTracker extends Component {
   }
 
   onPending = (userID, type, classesLeft) => {
-    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/` + userID, {
+    axios.post('http://localhost:5000/api/auth/updateuserpackage/' + userID, {
       status: 'pending',
       type: type, 
       classesLeft: classesLeft,
@@ -93,13 +93,12 @@ class ProgressTracker extends Component {
   showPendingUsers= () => {
     return this.state.listOfPendingUsers.map(eachU=> {
       return (
-        <div key={eachU._id}>
-          <h4>{eachU.firstName} {eachU.lastName} is interested in:</h4>
-          <p>Level: {eachU.package.type}</p>
-          <p>Package for {eachU.package.classesLeft} classes</p>
-          <strong>Status: {eachU.package.status}</strong>
-          <button onClick={()=>{this.onCancel(eachU._id)}}>Cancel</button>
-          <button onClick={()=>{this.onPaid(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>Paid!</button>
+        <div className="each-alert not-paid" key={eachU._id}>
+          <div className="exclamation">!</div>
+          <a href="mailto:test"><b>{eachU.firstName} {eachU.lastName}</b> is interested in acquiring the <u>{eachU.package.type}</u> package with <u>{eachU.package.classesLeft} classes</u>.</a>
+          <p>({eachU.package.status})</p>
+          <button className="login-signup small-button" onClick={()=>{this.onCancel(eachU._id)}}>CANCEL</button>
+          <button className="login-signup small-button" onClick={()=>{this.onPaid(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>PAID</button>
         </div>
       )
     })
@@ -108,13 +107,13 @@ class ProgressTracker extends Component {
   showPaidUsers= () => {
     return this.state.listOfPaidUsers.map(eachU=> {
       return (
-        <div key={eachU._id}>
-          <h4>{eachU.firstName} {eachU.lastName} have paid for:</h4>
+        <div className="each-alert" key={eachU._id}>
+          <p>{eachU.firstName} {eachU.lastName} have paid for:</p>
           <p>Level: {eachU.package.type}</p>
           <p>Package for {eachU.package.classesLeft} classes</p>
           <strong>Status: {eachU.package.status}</strong>
-          <button onClick={()=>{this.onCancel(eachU._id)}}>Cancel</button>
-          <button onClick={()=>{this.onPending(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>Pending!</button>
+          <button className="login-signup small-button" onClick={()=>{this.onCancel(eachU._id)}}>CANCEL</button>
+          <button className="login-signup small-button" onClick={()=>{this.onPending(eachU._id, eachU.package.type, eachU.package.classesLeft)}}>PENDING</button>
         </div>
       )
     })
@@ -122,20 +121,21 @@ class ProgressTracker extends Component {
 
   render() {
     return (
-      <div className="tracker">
-        <small>[this is the <b>connected </b>progress tracker component]</small>
-        <small>pending status info for admin</small>
-        <p>
-        {this.state.message}
-        </p>
-        <div className="users-list-wrapper">
-          <div className="users-pending-wrapper">
-          {this.showPendingUsers()}
-          </div>
-          <div className="users-paid-wrapper">
-          {this.showPaidUsers()}
-          </div>
-        </div>
+
+      <div>
+        {(this.state.listOfPaidUsers.length > 0 || this.state.listOfPendingUsers.length > 0) &&
+          <div className="each-profile-section tracker">
+            <div className="users-list-wrapper">
+              <div className="users-pending-wrapper">
+              {this.showPendingUsers()}
+              </div>
+              <div className="users-paid-wrapper">
+              {this.showPaidUsers()}
+              </div>
+            </div>
+          </div>   
+        }
+
       </div>
     );
   }

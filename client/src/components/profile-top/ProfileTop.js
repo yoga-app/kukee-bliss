@@ -32,7 +32,6 @@ class ProfileTop extends Component {
       username: this.state.username,
     })
     .then((freshUser)=> {
-      console.log(freshUser);
       this.props.getCurrentUser()
     })
     .catch((err)=> {
@@ -46,7 +45,6 @@ class ProfileTop extends Component {
     this.fileUpload(this.state.file)
     .then((response)=>{
       this.props.getCurrentUser()
-      console.log(response.data);
       this.setState({showEditPicButton: false})
     })
   }

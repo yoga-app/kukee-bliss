@@ -48,7 +48,7 @@ class RoutineBuilder extends Component {
   render() {
     return (
       <div className="temporary">
-        <small>[this is the <b>Routine Builder component</b>]</small><br />
+        <small>[this is the <b>connected </b>Routine Builder component]</small><br />
         <div className="form-wrapper">
           <form onSubmit={this.handleSubmit}>
             <input name="description" onChange={this.handleInput} value={this.state.description} />

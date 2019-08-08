@@ -28,7 +28,7 @@
   list-style: none;
 }
 
-.footer a {
+.footer a:not(.builtby-link) {
   text-decoration: none;
   color: #413B3D;
   border-bottom: 1px solid #413b3da4;
@@ -54,6 +54,16 @@
 
 .social-icon {
   width: 30px;
+}
+
+.builtby-icon {
+  width: 25px;
+  border-radius:12px; 
+}
+
+.builtby-p {
+  margin: 0;
+  
 }
 
 .social-text {

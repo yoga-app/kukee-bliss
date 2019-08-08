@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {NavLink} from 'react-router-dom';
 
 import './menucontent.css'
 
@@ -15,16 +16,58 @@ class MenuContent extends Component {
   render() {
     return (
       <div className="menu">
-        {this.items.map(i => <div className="menu-item" key={i}>
-          <a
-            href="https://github.com/arstrel"
-            onClick={this.props.closeCallback}
-            target="_blank">
-            Menu item {i}
-          </a>
-        </div>)}
-
-        <p className="hint">Click outside the menu to close it, or swipe it closed on touch device</p>
+        <div className="menu-item">
+          <NavLink exact to="/" 
+        activeClassName="nav-link-active" 
+        className="nav-link"
+        onClick={this.props.closeCallback}> home</NavLink>
+        </div>
+        {this.props.theUser && 
+        <div className="menu-item">
+          <NavLink to="/profile" activeClassName="nav-link-active" 
+          className="nav-link profile"
+          >
+            <img className="profile-pic" alt="profile" src={this.props.theUser.picture} />
+            <div>
+              {this.props.theUser.firstName} {this.props.theUser.lastName}
+            </div>
+          </NavLink>
+        </div>
+        }
+        {this.props.theUser ? 
+        <div className="menu-item"> 
+          <span>
+            <button className="nav-button" onClick = {this.props.logout}>logout</button>
+          </span>
+        </div>
+        :
+        <div className="menu-item">
+          <span>
+            <button className="nav-button" onClick = {this.props.closeCallbackForLogin}>login</button>
+            <button className="nav-button" onClick = {this.props.closeCallbackForSignup}>sign up</button>
+          </span>
+        </div>
+        }
+        <div className="menu-item">
+        <NavLink exact to="/classes" activeClassName="nav-link-active" 
+        className="nav-link"
+        onClick={this.props.closeCallback}
+        >classes</NavLink>
+        </div>
+        <div className="menu-item">
+        <NavLink exact to="/aboutus" activeClassName="nav-link-active" 
+        className="nav-link"
+        onClick={this.props.closeCallback}
+        >about us</NavLink>
+        </div>
+        <div className="menu-item">
+        <NavLink exact to="/gallery" activeClassName="nav-link-active" 
+        className="nav-link"
+        onClick={this.props.closeCallback}
+        >gallery</NavLink>
+        </div>
+      
+        <p className="hint">Kukee bliss Yoga. Experience the best things in life with a clear mind and healthy body.</p>
       </div>
     )
   }

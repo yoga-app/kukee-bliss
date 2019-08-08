@@ -74,6 +74,10 @@ class ProfileTop extends Component {
     this.setState({showEditPicButton: false});
   }
 
+  cancelProfileEdit =() => {
+    this.setState({isEditing: false})
+  }
+
   showInfo() {
     return (
     <section className="user-info">
@@ -141,6 +145,7 @@ class ProfileTop extends Component {
       <form onSubmit={this.toggleEditForm}>
       <Button text="SAVE CHANGES" class="login-signup small-button"/>
       </form>
+      <button class="login-signup small-button" onClick={this.toggleEditForm}>CANCEL</button>
     </div>
     </section>
     )

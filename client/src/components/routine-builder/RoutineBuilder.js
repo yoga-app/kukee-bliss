@@ -62,9 +62,9 @@ class RoutineBuilder extends Component {
   }
 
   showCurrentRoutine = () => {
-    return this.state.currentRoutine.map(eachR=>{
+    return this.state.currentRoutine.map((eachR,i)=>{
       return (
-        <div key={eachR._id} className="each-asana-builder-wrapper" onClick={()=>{this.removeFromCurrent(eachR._id)}}>
+        <div key={eachR._id+i} className="each-asana-builder-wrapper" onClick={(e)=>{this.removeFromCurrent(e, eachR._id)}}>
           <img src={eachR.img_url} alt="asana" className="daily-builder-asana"/>
           <p>{eachR.english_name}</p>
           <p>{eachR.sanskrit_name}</p>
@@ -73,10 +73,10 @@ class RoutineBuilder extends Component {
     })
   }
 
-  removeFromCurrent = (id) => {
+  removeFromCurrent = (e, id) => {
     let currentRoutineClone = this.state.currentRoutine;
     let routineIdsClone = this.state.routineIds;
-
+    console.log(e);
     let newRoutine = currentRoutineClone.filter(eachR => {
       return eachR._id === id ? false : true
     })

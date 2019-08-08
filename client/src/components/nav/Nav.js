@@ -21,6 +21,15 @@ class Nav extends React.Component{
   }
 
   closeMenu() {
+    this.props.hideLoginAndSignupForms()
+    this.setState({ menuOpen: false })
+  }
+  closeMenuForLogin() {
+    this.props.toggleForm('login')
+    this.setState({ menuOpen: false })
+  }
+  closeMenuForSignup() {
+    this.props.toggleForm('signup')
     this.setState({ menuOpen: false })
   }
 
@@ -39,7 +48,14 @@ class Nav extends React.Component{
       <CheeseburgerMenu
         isOpen={this.state.menuOpen}
         closeCallback={this.closeMenu.bind(this)}>
-        <MenuContent closeCallback={this.closeMenu.bind(this)}/>
+        <MenuContent 
+        closeCallback={this.closeMenu.bind(this)}
+        closeCallbackForLogin={this.closeMenuForLogin.bind(this)}
+        closeCallbackForSignup={this.closeMenuForSignup.bind(this)}
+        logout={this.doLogoutNowPlease}
+        theUser={this.props.theUser}
+        toggleForm={this.props.toggleForm}
+        />
       </CheeseburgerMenu>
       
       <HamburgerMenu
@@ -52,11 +68,14 @@ class Nav extends React.Component{
         color='black'
         borderRadius={0}
         animationDuration={0.5}
+        
       />
       
-      <div >
-        <h1>Cheeseburger Menu demo</h1>
-        <p>Click the hamburger icon to open menu</p>
+      <div className="d-flex">
+        <div className="logo">
+          <img className="kukee-img" src="/images/logo.svg" alt="logo" />
+          <p className="kukee">Kukee <span>Bliss Yoga</span></p>
+        </div>
       </div>
     </div>
     </Breakpoint>
@@ -64,7 +83,7 @@ class Nav extends React.Component{
     <Breakpoint medium up>
         <nav>
       <NavLink className="logo-link" to="/" onClick={this.props.hideLoginAndSignupForms}>
-        <div className="logo">
+      <div className="logo">
           <img className="kukee-img" src="/images/logo.svg" alt="logo" />
           <p className="kukee">Kukee <span>Bliss Yoga</span></p>
         </div>

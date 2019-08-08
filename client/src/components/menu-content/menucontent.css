@@ -34,3 +34,12 @@
 .hint {
   padding: .5rem 15px;
 }
+.cheeseburger-menu + div {
+  z-index: 100;
+  margin: 15px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+}

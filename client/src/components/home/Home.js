@@ -64,10 +64,10 @@ class Home extends Component {
         <BreakpointProvider>
           <Hero showMandala={this.showMandala}/>
           {this.state.ready && <Quote text={this.state.quote.text} author={this.state.quote.author}/>}
-        </BreakpointProvider>
           <section className="testimonial-cards">
             {this.state.ready && this.showTestimonials()}
           </section>
+        </BreakpointProvider>
           <Slogan />
       </div>
     );

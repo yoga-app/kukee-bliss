@@ -1,7 +1,6 @@
 .testimonial-picture-div {
   width: 70px;
   height: 70px;
-  /* border: 2px solid black; */
 }
 
 .testimonial-picture {
@@ -27,6 +26,7 @@
   margin: 0;
 }
 
+
 .testimonial-card {
   background-color: rgb(230, 243, 243);
   border-radius: 20px;
@@ -40,6 +40,23 @@
   transition: all .1s;
 }
 
+.testimonial-card-mobile {
+  background-color: rgb(230, 243, 243);
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px gray;
+  padding: 30px;
+  margin: 25px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .1s;
+  font-size: 1rem;
+  width: 250px;
+}
+
+.testimonial-card-mobile .testimonial-picture {
+  max-width: 80%;
+}
 
 .testimonial-card:hover {
   transform: scale(1.02);

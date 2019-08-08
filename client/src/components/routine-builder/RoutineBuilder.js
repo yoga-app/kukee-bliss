@@ -166,28 +166,3 @@ class RoutineBuilder extends Component {
 }
 
 export default RoutineBuilder;
-
-
-
-
-{/* <div className="assigning-section">
-          <div className="form-wrapper">
-            <label>description:</label>
-            <input name="description" onChange={this.handleInput} value={this.state.description} />
-          </div>
-          <div className="asanas-list-builder-wrapper">
-            {this.state.routine && 
-              <div>
-                <div className="routine-description">
-                  <p>{this.state.description}</p>
-                </div>
-                <div className="asanas-list-builder-wrapper">
-                {this.showCurrentRoutine()}
-                <div>
-                  <button onClick={this.assingToAll}>Assign to Everyone</button>
-                  <button onClick={this.toggleUserList}>Assign personally</button>
-                </div>
-                </div>
-                <div className="all-users-list-wrapper">
-                  {this.state.showUserList && this.showListOfUsers()}
-                </div> */}

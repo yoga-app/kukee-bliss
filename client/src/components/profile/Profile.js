@@ -47,6 +47,7 @@ class Profile extends Component {
         <ProfileTop currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
         {this.props.theUser && this.props.theUser.isAdmin &&
            <ProgressTracker currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
+        {this.state.ready && <DailyRoutine currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
         <PrivateGallery currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
 
         <Subscription />
@@ -57,7 +58,6 @@ class Profile extends Component {
         allUsersList = {this.state.allUsersList} 
         getCurrentUser = {this.props.getCurrentUser}/>}
 
-        {this.state.ready && <DailyRoutine currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
         
         <Docs />
       </div>

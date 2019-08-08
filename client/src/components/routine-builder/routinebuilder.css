@@ -41,13 +41,14 @@
 .one-user-wrapper {
   justify-content: space-between;
   padding: 25px 10px;
-  height: 120px;
+  width: 100px;
   margin: 17px;
 }
 
 .each-asana-builder-wrapper > p, .one-user-wrapper > p {
   margin: 0;
   position: relative;
+  font-size: 1rem;
 }
 
 .each-asana-builder-wrapper:hover, .one-user-wrapper:hover {
@@ -132,7 +133,7 @@
 .all-users-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 80px;
+  margin: 30px 40px 0 40px;
 }
 
 .daily-name {

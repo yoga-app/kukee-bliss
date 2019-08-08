@@ -1,6 +1,6 @@
 .each-profile-section {
   margin: 0 50px 50px 50px;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #ecdbcb;
 }
 
@@ -10,4 +10,10 @@
   margin: 0;
   padding: 2rem 0 3.2rem 0;
   text-align: center;
+}
+
+.routine-related-things {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

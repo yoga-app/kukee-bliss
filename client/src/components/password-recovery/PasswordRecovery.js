@@ -41,11 +41,14 @@ class PasswordRecovery extends Component {
     if(this.props.forReset) 
     { 
       return (
-        <div className="password-recovery-form">
+        <div className="password-recovery-form-wrapper">
+        <form  className="password-recovery-form" onSubmit={this.onPasswordReset}>
         <h4>Password Reset</h4>
-        <form onSubmit={this.onPasswordReset}>
-        <input name="password" onChange={this.handleChange} value={this.state.password} />
-        <button>Submit</button>
+        <div>
+        <label htmlFor="reset-input">e-mail:</label>
+        <input name="password" id="reset-input" onChange={this.handleChange} value={this.state.password} />
+        </div>
+        <button className="login-signup  recovery-button">SUBMIT</button>
         </form>
         </div>
     
@@ -54,11 +57,14 @@ class PasswordRecovery extends Component {
     else
     {
       return (
-        <div className="password-recovery-form">
+        <div className="password-recovery-form-wrapper">
+        <form  className="password-recovery-form" onSubmit={this.handleFormSubmit}>
         <h4>Password Recovery</h4>
-        <form onSubmit={this.handleFormSubmit}>
-        <input name="email" onChange={this.handleChange} value={this.state.email} />
-        <button>Submit</button>
+        <div>
+        <label htmlFor="recovery-input">e-mail:</label>
+        <input name="email" id="recovery-input" onChange={this.handleChange} value={this.state.email} />
+        </div>
+        <button className="login-signup recovery-button">SUBMIT</button>
         </form>
         </div> 
        

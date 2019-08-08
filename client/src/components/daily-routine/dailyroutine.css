@@ -37,3 +37,13 @@
   background-color: #ecdbcb;
   margin: 5px;
 }
+
+@media (max-width: 767px) {
+
+  .daily-routine-card {
+    width: 330px;
+    margin: 21px;
+    padding: 15px;
+  }
+
+}

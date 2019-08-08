@@ -112,11 +112,11 @@ class ProfileTop extends Component {
       <p className="profile-email">{this.props.currentUser.username}</p>
     </div>
     <div className="edit-button-wrapper">
-    <form onSubmit={this.toggleEditForm}>
-    <Button text="EDIT PROFILE" class="login-signup small-button"/>
-    </form>
     <form onSubmit={this.deleteProfile}>
       <Button text="DELETE PROFILE" class="login-signup small-button"/>
+    </form>
+    <form onSubmit={this.toggleEditForm}>
+      <Button text="EDIT PROFILE" class="login-signup small-button"/>
     </form>
   </div>
   </section>

@@ -43,10 +43,10 @@ a {
 .none {display: none;}
 
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
 
   .app {
-    margin: calc(50% - 200px);
+    margin: 0 calc(50% - 200px);
   }
 
 }

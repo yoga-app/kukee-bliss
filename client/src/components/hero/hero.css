@@ -12,12 +12,13 @@
   height: 100px;
 }
 
-@media (max-width: 500px) {
-
-  .hero {
-    background-position: -420px 30px;
-    min-width: 400px;
-    max-width: 400px;
-  }
-  
+.hero-mobile {
+  background-image: url("/images/hero.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 65vh;
+  z-index: -3;
+  background-position: -185px 30px;
+  min-width: 400px;
+  max-width: 400px;
 }

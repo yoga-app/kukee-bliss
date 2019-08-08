@@ -6,6 +6,7 @@ import Testimonial from '../testimonial/Testimonial.js';
 import Slogan from '../slogan/Slogan.js';
 import axios from 'axios';
 import Mandala from '../mandala/Mandala';
+import Breakpoint, { BreakpointProvider } from 'react-socks';
 
 
 
@@ -60,8 +61,10 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Hero showMandala={this.showMandala}/>
+        <BreakpointProvider>
+          <Hero showMandala={this.showMandala}/>
           {this.state.ready && <Quote text={this.state.quote.text} author={this.state.quote.author}/>}
+        </BreakpointProvider>
           <section className="testimonial-cards">
             {this.state.ready && this.showTestimonials()}
           </section>

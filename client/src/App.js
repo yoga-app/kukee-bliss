@@ -14,7 +14,10 @@ import Newsletter from './components/newsletter/Newsletter';
 import Gallery from './components/gallery/Gallery';
 import Faq from './components/faq/Faq';
 import PasswordRecovery from './components/password-recovery/PasswordRecovery';
+import Breakpoint, { BreakpointProvider } from 'react-socks';
 // import Mandala from './components/mandala/Mandala';
+
+
 
 class App extends React.Component {
   constructor(props){
@@ -29,8 +32,6 @@ class App extends React.Component {
 
    this.service = new AuthService();
   }
-
-
 
   getCurrentlyLoggedInUser = () =>{
     this.service.currentUser()
@@ -75,6 +76,7 @@ class App extends React.Component {
 
     return (
       <div className="app">
+        <BreakpointProvider>
         <Nav
           theUser = {this.state.currentlyLoggedIn} 
           pleaseLogOut = {()=> this.service.logout()}
@@ -82,6 +84,8 @@ class App extends React.Component {
           getUser = {this.getCurrentlyLoggedInUser}
           hideLoginAndSignupForms={this.hideLoginAndSignupForms}
         />
+      </BreakpointProvider>
+        
 
         {this.state.signupShowing && 
           <Signup

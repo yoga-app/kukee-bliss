@@ -1,15 +1,17 @@
+.routine-builder {
+  padding-bottom: 50px;
+}
+
 .daily-builder-asana {
   width: 70px;
 }
 .asanas-list-builder-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 50px;
+}
 
-}
-.each-asana-builder-wrapper {
-  margin: 0 20px;
-  width: 100px;
-}
 .user-picture {
   width: 50px;
   border-radius: 25px;
@@ -22,7 +24,7 @@
   padding: 10px;
   width: 150px;
   height: 150px;
-  margin: 5px;
+  margin: 17px 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -44,17 +46,13 @@
   color: #000000;
 }
 
-/* .routine-builder {
-  display: flex;
-  flex-direction: column;
-} */
-
 .assigning-section {
   background-color: #f0e7df;
   margin: 0 50px 50px 50px;
   padding: 40px 30px;
   border-radius: 5px;
-  height: 400px;
+  height: fit-content;
+  min-height: 310px;
 }
 
 .form-wrapper > input {
@@ -73,6 +71,27 @@
 .routine-description {
   height: fit-content;
   min-height: 3rem;
-  /* min-height: 3rem; */
-  /* max-height: fit-content; */
+}
+
+.builder-buttons {
+  display: flex;
+  width: 270px;
+  justify-content: space-between;
+  align-self: flex-end;
+}
+
+.builder {
+  height: fit-content;
+  min-height: 210px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 80px 40px 80px;
+}
+
+.builder > * {
+  margin: 17px;
+}
+
+.builder-mid-section {
+  width: 100%;
 }

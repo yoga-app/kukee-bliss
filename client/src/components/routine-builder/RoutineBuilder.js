@@ -6,7 +6,7 @@ class RoutineBuilder extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routine: [],
+      routineIds: [],
       description: '',
       currentRoutine: [],
       allUsersList: [],
@@ -36,12 +36,12 @@ class RoutineBuilder extends Component {
 
   assingToAll = () => {
     axios.post(`${process.env.REACT_APP_BASE}api/auth/update-daily-routine-for-all/`, {
-      routine: this.state.routine,
+      routine: this.state.routineIds,
       description: this.state.description,
     })
     .then(response=> {
       this.props.getCurrentUser();
-      this.setState({routine: [], currentRoutine: [], description: ''})
+      this.setState({routineIds: [], currentRoutine: [], description: ''})
     })
     .catch(err=> {
       console.log(err);
@@ -50,7 +50,7 @@ class RoutineBuilder extends Component {
 
   assingToUserById = (userId) => {
     axios.post(`${process.env.REACT_APP_BASE}api/auth/update-daily-routine/${userId}`, {
-      routine: this.state.routine,
+      routine: this.state.routineIds,
       description: this.state.description,
     })
     .then(response=> {
@@ -64,13 +64,28 @@ class RoutineBuilder extends Component {
   showCurrentRoutine = () => {
     return this.state.currentRoutine.map(eachR=>{
       return (
-        <div key={eachR._id} className="each-asana-builder-wrapper" >
+        <div key={eachR._id} className="each-asana-builder-wrapper" onClick={()=>{this.removeFromCurrent(eachR._id)}}>
           <img src={eachR.img_url} alt="asana" className="daily-builder-asana"/>
           <p>{eachR.english_name}</p>
           <p>{eachR.sanskrit_name}</p>
         </div>
       )
     })
+  }
+
+  removeFromCurrent = (id) => {
+    let currentRoutineClone = this.state.currentRoutine;
+    let routineIdsClone = this.state.routineIds;
+
+    let newRoutine = currentRoutineClone.filter(eachR => {
+      return eachR._id === id ? false : true
+    })
+
+    let newRoutineIds = routineIdsClone.filter(eachId => {
+      return eachId === id ? false : true
+    })
+    
+    this.setState({currentRoutine: newRoutine, routineIds: newRoutineIds})
   }
 
   addToRoutine = (id, uri, engName, sanName) => {
@@ -81,9 +96,9 @@ class RoutineBuilder extends Component {
       english_name: engName,
       sanskrit_name: sanName, 
     })
-    let clone = this.state.routine;
+    let clone = this.state.routineIds;
     clone.push(id)
-    this.setState({currentRoutine: temp, routine: clone})
+    this.setState({currentRoutine: temp, routineIds: clone})
   }
 
   showListOfUsers = () => {
@@ -98,12 +113,61 @@ class RoutineBuilder extends Component {
     })
   }
 
+  clearCurrentRoutine = () => {
+    this.setState({ 
+      routineIds: [],
+      description: '',
+      currentRoutine: []
+    })
+  }
 
   render() {
     return (
       <div className="each-profile-section routine-builder">
         <h4>Routine Builder</h4>
+
         <div className="assigning-section">
+          <div className="form-wrapper">
+            <label>description:</label>
+            <input name="description" onChange={this.handleInput} value={this.state.description} />
+          </div>
+          <div>
+            {this.state.routineIds && 
+              <div className="builder-mid-section">
+                <div className="routine-description">
+                  <p>{this.state.description}</p>
+                </div>
+                <div className="builder">
+                  {this.showCurrentRoutine()}
+                </div>
+                <div className="builder-buttons">
+                  <button className="login-signup small-button" onClick={this.assingToAll}>ASSIGN TO ALL</button>
+                  <button className="login-signup small-button" onClick={this.toggleUserList}>SELECT USERS</button>
+                  <button className="login-signup small-button" onClick={this.clearCurrentRoutine}>CLEAR</button>
+                </div>
+                <div className="all-users-list-wrapper">
+                  {this.state.showUserList && this.showListOfUsers()}
+                </div>
+              </div>
+              }
+          </div>
+        </div>
+        <div className="asanas-list-builder-wrapper">
+          {this.showAllAsanas()}
+        </div>
+        <div className="daily-asanas-builder-wrapper">
+        </div>
+      </div>
+    );
+  }
+}
+
+export default RoutineBuilder;
+
+
+
+
+{/* <div className="assigning-section">
           <div className="form-wrapper">
             <label>description:</label>
             <input name="description" onChange={this.handleInput} value={this.state.description} />
@@ -123,24 +187,4 @@ class RoutineBuilder extends Component {
                 </div>
                 <div className="all-users-list-wrapper">
                   {this.state.showUserList && this.showListOfUsers()}
-                </div>
-              </div>
-              }
-          </div>
-        </div>
-
-
-
-        <div className="asanas-list-builder-wrapper">
-          <h5>All the asanas</h5>
-          {this.showAllAsanas()}
-        </div>
-        <div className="daily-asanas-builder-wrapper">
-
-        </div>
-      </div>
-    );
-  }
-}
-
-export default RoutineBuilder;
+                </div> */}

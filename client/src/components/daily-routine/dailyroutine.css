@@ -1,9 +1,49 @@
 .daily-asana {
-  width: 50px;
+  width: 45px;
 }
+
 .daily-asanas-wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
+
 .each-asana-wrapper {
   margin: 0 15px;
+}
+
+.daily-routine-card {
+  background-color: rgb(230, 243, 243);
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px gray;
+  padding: 30px;
+  width: 330px;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .1s;
+}
+
+.daily-routine-card h4 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.each-asana-builder-wrapper-on-card {
+  background-color: #ecdbcb;
+  width: 79px;
+  height: 85px;
+  margin: 5px;
+}
+
+.daily-name {
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+.daily-sansk {
+  font-size: .7rem;
 }

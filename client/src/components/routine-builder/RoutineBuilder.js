@@ -104,11 +104,10 @@ class RoutineBuilder extends Component {
   showListOfUsers = () => {
     return this.props.allUsersList.map(eachU => {
       return (
-        <div key={eachU._id} className="one-user-wrapper">
+        <a key={eachU._id} className="one-user-wrapper" onClick={()=>{this.assingToUserById(eachU._id)}}>
           <img src={eachU.picture} alt="user" className="user-picture"/>
           <p>{eachU.firstName} {eachU.lastName}</p>
-          <button onClick={()=>{this.assingToUserById(eachU._id)}}>Assign to this user</button>
-        </div>
+        </a>
       )
     })
   }
@@ -142,7 +141,11 @@ class RoutineBuilder extends Component {
                 </div>
                 <div className="builder-buttons">
                   <button className="login-signup small-button" onClick={this.assingToAll}>ASSIGN TO ALL</button>
-                  <button className="login-signup small-button" onClick={this.toggleUserList}>SELECT USERS</button>
+                  <button className="login-signup small-button" onClick={this.toggleUserList}>
+                    {this.state.showUserList ?
+                    "HIDE USERS" : "SELECT USERS"
+                    }
+                    </button>
                   <button className="login-signup small-button" onClick={this.clearCurrentRoutine}>CLEAR</button>
                 </div>
                 <div className="all-users-list-wrapper">
@@ -163,28 +166,3 @@ class RoutineBuilder extends Component {
 }
 
 export default RoutineBuilder;
-
-
-
-
-{/* <div className="assigning-section">
-          <div className="form-wrapper">
-            <label>description:</label>
-            <input name="description" onChange={this.handleInput} value={this.state.description} />
-          </div>
-          <div className="asanas-list-builder-wrapper">
-            {this.state.routine && 
-              <div>
-                <div className="routine-description">
-                  <p>{this.state.description}</p>
-                </div>
-                <div className="asanas-list-builder-wrapper">
-                {this.showCurrentRoutine()}
-                <div>
-                  <button onClick={this.assingToAll}>Assign to Everyone</button>
-                  <button onClick={this.toggleUserList}>Assign personally</button>
-                </div>
-                </div>
-                <div className="all-users-list-wrapper">
-                  {this.state.showUserList && this.showListOfUsers()}
-                </div> */}

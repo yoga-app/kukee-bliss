@@ -5,8 +5,10 @@ import Liability from '../liability/Liability.js';
 
 class Docs extends Component {
   render() {
+    //class none - for display:none for now,
     return (
-      <div className="docs temporary">
+      <div className="none temporary ">
+      
         <small>[this is the <b>docs component</b>]</small><br />
         <Waiver />
         <Liability />

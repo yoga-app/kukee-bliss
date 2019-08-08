@@ -104,11 +104,10 @@ class RoutineBuilder extends Component {
   showListOfUsers = () => {
     return this.props.allUsersList.map(eachU => {
       return (
-        <div key={eachU._id} className="one-user-wrapper">
+        <a key={eachU._id} className="one-user-wrapper" onClick={()=>{this.assingToUserById(eachU._id)}}>
           <img src={eachU.picture} alt="user" className="user-picture"/>
           <p>{eachU.firstName} {eachU.lastName}</p>
-          <button onClick={()=>{this.assingToUserById(eachU._id)}}>Assign to this user</button>
-        </div>
+        </a>
       )
     })
   }
@@ -142,7 +141,11 @@ class RoutineBuilder extends Component {
                 </div>
                 <div className="builder-buttons">
                   <button className="login-signup small-button" onClick={this.assingToAll}>ASSIGN TO ALL</button>
-                  <button className="login-signup small-button" onClick={this.toggleUserList}>SELECT USERS</button>
+                  <button className="login-signup small-button" onClick={this.toggleUserList}>
+                    {this.state.showUserList ?
+                    "HIDE USERS" : "SELECT USERS"
+                    }
+                    </button>
                   <button className="login-signup small-button" onClick={this.clearCurrentRoutine}>CLEAR</button>
                 </div>
                 <div className="all-users-list-wrapper">

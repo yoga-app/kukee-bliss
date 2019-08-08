@@ -7,7 +7,11 @@ import './login.css';
 class Login extends Component {
   constructor(props){
     super(props);
-    this.state = { usernameInput: '', passwordInput: '' };
+    this.state = { 
+      usernameInput: '', 
+      passwordInput: '',
+      error: '', 
+    };
     this.service = new AuthService();
   }
 
@@ -21,16 +25,28 @@ class Login extends Component {
       const pWord = this.state.passwordInput;
 
       this.service.login(uName, pWord)
-      .then(()=>{
+      .then((response)=>{
           this.props.toggleForm('login');
           this.props.getUser();
       })
+      .catch(err =>{
+        if(err.toString().includes('401')) {
+          let temp = 'Login or password not found';
+          this.setState({error: temp, usernameInput: '', passwordInput: ''})
+        }
+      })
 
+  }
+
+  resetError =() => {
+    this.setState({error: ''})
   }
 
   render(){
     return(
       <form className="form-login" onSubmit = {this.tryToLogin}>
+        <div className="error-message">{this.state.error && 
+        <span className="error-span" onAnimationEnd={this.resetError}>{this.state.error}</span>}</div>
         <div>
           <label>e-mail:</label>
           <input value={this.state.usernameInput}

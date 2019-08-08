@@ -25,6 +25,15 @@ class Footer extends Component {
           <img src="/images/facebook.svg" alt="" className="social-icon"/>
           <span className="social-text">Follow us on Facebook</span>
           </a>
+
+          <p className="builtby-p">
+          Built by <a href="https://github.com/arstrel" target="_blank" rel="noopener noreferrer" className="builtby-link">
+           Artem  
+          </a> and <a href="https://github.com/taluama" target="_blank" rel="noopener noreferrer" className="builtby-link">
+           Talu 
+          </a>
+          </p>
+
         </div>
       </div>
     );

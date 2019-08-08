@@ -41,3 +41,12 @@ a {
 }
 
 .none {display: none;}
+
+
+@media (max-width: 500px) {
+
+  .app {
+    margin: calc(50% - 200px);
+  }
+
+}

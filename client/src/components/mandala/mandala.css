@@ -206,3 +206,11 @@ opacity: .2}
 @media (max-width:500px){
 	[class*="container"]{transform:translate(-50%,-50%) scale(.7,.7)}
 	}
+
+
+@media (max-width: 500px) {
+
+	.mandala {
+		display: none;
+	}
+}

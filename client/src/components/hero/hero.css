@@ -3,7 +3,6 @@
   background-image: url("/images/hero.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* width: 100vw; */
   min-height: 115vh;
   min-width: 950px;
   z-index: -3;
@@ -11,4 +10,14 @@
 
 .hero section {
   height: 100px;
+}
+
+@media (max-width: 500px) {
+
+  .hero {
+    background-position: -420px 30px;
+    min-width: 400px;
+    max-width: 400px;
+  }
+  
 }

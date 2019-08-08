@@ -104,7 +104,7 @@ class RoutineBuilder extends Component {
   showListOfUsers = () => {
     return this.props.allUsersList.map(eachU => {
       return (
-        <a key={eachU._id} className="one-user-wrapper builder-top" onClick={()=>{this.assingToUserById(eachU._id)}}>
+        <a href="/#" key={eachU._id} className="one-user-wrapper builder-top" onClick={()=>{this.assingToUserById(eachU._id)}}>
           <img src={eachU.picture} alt="user" className="user-picture"/>
           <p>{eachU.firstName} {eachU.lastName}</p>
         </a>

@@ -1,3 +1,9 @@
+.wrapper-mobile .user-pic-round {
+  margin: 40px 0 0 40px;
+  width: 85px;
+  height: 85px;
+}
+
 .user-pic-round {
   border-radius: 50%;
   object-fit: cover;
@@ -5,6 +11,33 @@
   height: 185px;
   align-self: center;
   border: 5px solid #FDF4F3;
+}
+
+.wrapper-mobile .profile-info .inline {
+  font-size: 2.3rem;
+}
+
+.wrapper-mobile .profile-email, .wrapper-mobile .email-input {
+  font-size: 1.3rem;
+}
+
+.wrapper-mobile .first-name-input, .wrapper-mobile .last-name-input {
+  font-size: 2.3rem;
+}
+
+.wrapper-mobile .edit-button-wrapper {
+  position: absolute;
+  top: 160px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 205px;
+}
+
+.wrapper-mobile .package-info-wrapper {
+  margin: 0 0 50px 30px;
+  font-size: 1.15rem;
+  width: 80%;
 }
 
 .user-pic-round:hover {
@@ -20,7 +53,7 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  height: 110px;
+  height: fit-content;
 }
 
 .user-pic-wrapper {
@@ -48,11 +81,19 @@
   padding-top: 100px;
 }
 
+.wrapper-mobile {
+  position: relative;
+  top: 20px;
+}
+
+.wrapper-mobile .profile-bg-pic {
+  height: 200px;
+}
+
 .profile-info h4 {
   font-size: 4rem;
   font-weight: 400;
 }
-
 
 .profile-info p {
   font-size: 1.5rem;

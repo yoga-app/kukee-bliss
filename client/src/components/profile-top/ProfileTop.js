@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./profiletop.css";
 import Button from "../button/Button";
 import axios from 'axios';
+import Breakpoint from 'react-socks';
 
 class ProfileTop extends Component {
   constructor(props) {
@@ -108,7 +109,7 @@ class ProfileTop extends Component {
     <div className="user-info-wrapper profile-info">
       <h4 className="inline">{this.props.currentUser.firstName} </h4> 
       <h4 className="inline">{this.props.currentUser.lastName}</h4>
-      <p>{this.props.currentUser.username}</p>
+      <p className="profile-email">{this.props.currentUser.username}</p>
     </div>
     <div className="edit-button-wrapper">
     <form onSubmit={this.toggleEditForm}>
@@ -141,7 +142,7 @@ class ProfileTop extends Component {
         <input value={this.state.firstName} className="inline first-name-input" name="firstName" onChange={this.handleChange}/>
         <input value={this.state.lastName} className="inline last-name-input" name="lastName"  onChange={this.handleChange}/>
         <br />
-        <input value={this.state.username} className="last-name-input" name="username"  onChange={this.handleChange}/>
+        <input value={this.state.username} className="email-input" name="username"  onChange={this.handleChange}/>
       </div>
       <div className="edit-button-wrapper">
       <form onSubmit={this.toggleEditForm}>
@@ -201,19 +202,39 @@ class ProfileTop extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="profile-bg">
-          <img src={`https://images.unsplash.com/photo-1492541641671-bd75cf01a094?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1200&h=350&fit=crop&ixid=eyJhcHBfaWQiOjF9`}
-          alt="profile background"
-          className="profile-bg-pic"/>
-        </div>
-       
-        {this.state.isEditing ? this.showEditFields() : this.showInfo()}
+      <div>
+        <Breakpoint small down>
+          <div className="wrapper-mobile">
+            <div className="profile-bg">
+              <img src={`https://images.unsplash.com/photo-1492541641671-bd75cf01a094?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1200&h=350&fit=crop&ixid=eyJhcHBfaWQiOjF9`}
+              alt="profile background"
+              className="profile-bg-pic"/>
+            </div>
+          
+            {this.state.isEditing ? this.showEditFields() : this.showInfo()}
 
-        <div className="package-info-wrapper">
-          {this.state.result && <p>{this.state.result}</p>}
-          {this.showPackageInfo()}
-        </div>
+            <div className="package-info-wrapper">
+              {this.state.result && <p>{this.state.result}</p>}
+              {this.showPackageInfo()}
+            </div>
+          </div>
+        </Breakpoint>
+        <Breakpoint medium up>
+          <div className="wrapper">
+            <div className="profile-bg">
+              <img src={`https://images.unsplash.com/photo-1492541641671-bd75cf01a094?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1200&h=350&fit=crop&ixid=eyJhcHBfaWQiOjF9`}
+              alt="profile background"
+              className="profile-bg-pic"/>
+            </div>
+          
+            {this.state.isEditing ? this.showEditFields() : this.showInfo()}
+
+            <div className="package-info-wrapper">
+              {this.state.result && <p>{this.state.result}</p>}
+              {this.showPackageInfo()}
+            </div>
+          </div>
+        </Breakpoint>
       </div>
     );
   }

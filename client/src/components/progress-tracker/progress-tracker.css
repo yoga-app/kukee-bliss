@@ -81,3 +81,10 @@ a {
   flex-direction: column;
   align-items: flex-end;
 }
+
+@media (max-width: 767px) {
+  .tracker {
+    font-size: 1.1rem;
+    margin: 20px;
+  }
+}

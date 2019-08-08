@@ -15,7 +15,7 @@ import Gallery from './components/gallery/Gallery';
 import Faq from './components/faq/Faq';
 import PasswordRecovery from './components/password-recovery/PasswordRecovery';
 import Breakpoint, { BreakpointProvider } from 'react-socks';
-// import Mandala from './components/mandala/Mandala';
+
 
 
 

@@ -67,8 +67,8 @@ class Home extends Component {
           <section className="testimonial-cards">
             {this.state.ready && this.showTestimonials()}
           </section>
-        </BreakpointProvider>
           <Slogan />
+        </BreakpointProvider>
       </div>
     );
   }

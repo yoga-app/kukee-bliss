@@ -1,4 +1,4 @@
-.slogan {
+.slogan, .slogan-mobile {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -8,9 +8,32 @@
   background-size: cover;
   background-position: center;
   color: #ecdbcb;
-  /* width: 100vw; */
   height: 550px;
   box-shadow: 0 -10px 10px rgba(128, 128, 128, 0.664);
+}
+
+.slogan-mobile {
+  height: 300px;
+}
+
+.slogan-mobile h1 {
+  text-shadow: 1px 1px 5px #413B3D, -1px -1px 5px #413B3D;
+  letter-spacing: -.5rem;
+  font-size: 2rem;
+  animation-name: expand;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes expand {
+  0% {
+    letter-spacing: -.5rem;
+  }
+  100% {
+    letter-spacing: 0;
+  }
 }
 
 .slogan h1 {

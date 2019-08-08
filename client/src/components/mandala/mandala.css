@@ -2,7 +2,8 @@
 	{display:block;position:absolute;content:""}
 
 .mandala{background:#00000000;
-opacity: .2}
+/* opacity: .2 */
+}
 .mandala div{display:block;position:absolute}
 
 [class*="container"]{
@@ -203,7 +204,28 @@ opacity: .2}
 	border-right:5px solid transparent
 	}
 
+[class*="container"] {
+	opacity: .2;
+}
+
 @media (max-width:767px){
-	[class*="container"]{transform:translate(-50%,-50%) scale(.7,.7)}
+	
+	[class*="container"]{
+		opacity: .2;
+		animation-name: rotate-mandala;
+		animation-duration: 4s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;	
+	}
+	
+	@keyframes rotate-mandala {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			transform:translate(-50%,-50%) scale(.7,.7);
+			opacity: .2;
+		}
 	}
 
+}

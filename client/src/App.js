@@ -143,8 +143,9 @@ class App extends React.Component {
             <PasswordRecovery {...props} forReset />}/>
 
         </Switch>
-        {/* <Main /> */}
-        <Footer />
+        <BreakpointProvider>      
+          <Footer />
+        </BreakpointProvider>
       </div>
     );
   }

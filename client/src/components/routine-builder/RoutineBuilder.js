@@ -19,8 +19,8 @@ class RoutineBuilder extends Component {
         <div key={eachA._id} className="each-asana-builder-wrapper" onClick={()=>{
           this.addToRoutine(eachA._id, eachA.img_url, eachA.english_name, eachA.sanskrit_name)}}>
           <img src={eachA.img_url} alt="asana" className="daily-builder-asana"/>
-          <p>{eachA.english_name}</p>
-          <small>{eachA.sanskrit_name}</small>
+          <p className="daily-name">{eachA.english_name}</p>
+          <p className="daily-sansk">{eachA.sanskrit_name}</p>
         </div>
       )
     })
@@ -64,10 +64,10 @@ class RoutineBuilder extends Component {
   showCurrentRoutine = () => {
     return this.state.currentRoutine.map((eachR,i)=>{
       return (
-        <div key={eachR._id+i} className="each-asana-builder-wrapper" onClick={(e)=>{this.removeFromCurrent(e, eachR._id)}}>
+        <div key={eachR._id+i} className="each-asana-builder-wrapper builder-top" onClick={(e)=>{this.removeFromCurrent(e, eachR._id)}}>
           <img src={eachR.img_url} alt="asana" className="daily-builder-asana"/>
-          <p>{eachR.english_name}</p>
-          <p>{eachR.sanskrit_name}</p>
+          <p className="daily-name">{eachR.english_name}</p>
+          <p className="daily-sansk">{eachR.sanskrit_name}</p>
         </div>
       )
     })

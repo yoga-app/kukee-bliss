@@ -98,9 +98,9 @@ class ProfileTop extends Component {
             name="picture"
             onChange={this.onPicSelect}
             />
-          <button className={this.state.showEditPicButton ? `visible` : `invisible`}>Save Picture</button>
+          <button className={this.state.showEditPicButton ? `login-signup small-button visible` : `signup-login small-button invisible`}>VIEW AND SAVE PICTURE</button>
        </form>
-       <button onClick={this.cancel} className={this.state.showEditPicButton ? `visible` : `invisible`}>Cancel</button>
+       <button onClick={this.cancel} className={this.state.showEditPicButton ? `login-signup small-button visible` : `signup-login small-button invisible`}>CANCEL</button>
             
          
      
@@ -169,9 +169,9 @@ class ProfileTop extends Component {
     if (this.props.currentUser.package.status === 'pending') {
       return (
         <div className="package-info">
-          <p>Interested in {this.props.currentUser.package.type} class package with {this.props.currentUser.package.classesLeft} classes.</p>
-          <p>Status: {this.props.currentUser.package.status}. We'll contact you shortly.</p>
-          <button onClick={this.handleUndo}>Cancel request</button>
+          <p>Interested in <span className="class-status">{this.props.currentUser.package.type}</span> package ({this.props.currentUser.package.classesLeft} classes)</p>
+          <p>Status: <span className="class-status">{this.props.currentUser.package.status}</span>. We'll contact you shortly, make sure to check your e-mail inbox!</p>
+          <button className="login-signup small-button" onClick={this.handleUndo}>CANCEL REQUEST</button>
         </div>
       )
     } else if (this.props.currentUser.package.status === 'paid'){
@@ -208,14 +208,12 @@ class ProfileTop extends Component {
           className="profile-bg-pic"/>
         </div>
        
-      {this.state.isEditing ? this.showEditFields() : this.showInfo()}
+        {this.state.isEditing ? this.showEditFields() : this.showInfo()}
 
-      {/* that's package info */}
-      <div className="package-info-wrapper">
-        {this.state.result && <p>{this.state.result}</p>}
-      {this.showPackageInfo()}
-
-    </div>
+        <div className="package-info-wrapper">
+          {this.state.result && <p>{this.state.result}</p>}
+          {this.showPackageInfo()}
+        </div>
       </div>
     );
   }

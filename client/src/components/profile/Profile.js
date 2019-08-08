@@ -47,18 +47,18 @@ class Profile extends Component {
         <ProfileTop currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
         {this.props.theUser && this.props.theUser.isAdmin &&
            <ProgressTracker currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
-        {this.state.ready && <DailyRoutine currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
+        <div className="routine-related-things">
+          {this.state.ready && <DailyRoutine currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>}
+          {(this.props.theUser.isAdmin && this.state.ready) &&<RoutineBuilder 
+          asanas={this.state.asanas} 
+          currentUser={this.props.theUser}
+          allUsersList = {this.state.allUsersList} 
+          getCurrentUser = {this.props.getCurrentUser}/>}
+        </div>
+
         <PrivateGallery currentUser={this.props.theUser} getCurrentUser = {this.props.getCurrentUser}/>
-
-        <Subscription />
-
-        {(this.props.theUser.isAdmin && this.state.ready) &&<RoutineBuilder 
-        asanas={this.state.asanas} 
-        currentUser={this.props.theUser}
-        allUsersList = {this.state.allUsersList} 
-        getCurrentUser = {this.props.getCurrentUser}/>}
-
         
+        <Subscription />
         <Docs />
       </div>
     );

@@ -1,6 +1,7 @@
 .routine-builder {
   padding-bottom: 50px;
-  margin-top: 50px;
+  margin: 0 50px 0 0;
+  width: 900px;
 }
 
 .daily-builder-asana {
@@ -26,15 +27,15 @@
   border-radius: 20px;
   box-shadow: 1px 1px 3px gray;
   padding: 10px;
-  width: 150px;
-  height: 150px;
-  margin: 17px 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
   transition: all .1s;
+  width: 79px;
+  height: 117px;
+  margin: 13px 8px;
 }
 
 .one-user-wrapper {
@@ -79,10 +80,10 @@
 
 
 .assigning-section {
-  background-color: #f0e7df;
+  background-color: #e6f3f3;
   margin: 0 50px 50px 50px;
   padding: 40px 30px;
-  border-radius: 5px;
+  border-radius: 20px;
   height: fit-content;
   min-height: 310px;
 }
@@ -91,7 +92,7 @@
   font-size: 1.4rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 100;
-  width: 1060px;
+  width: 615px;
   height: 2rem;
   margin-left: 10px;
   padding-left: 7px;
@@ -117,7 +118,7 @@
   min-height: 210px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 80px 40px 80px;
+  margin: 0 40px 40px 40px;
 }
 
 .builder > * {
@@ -132,4 +133,13 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 80px;
+}
+
+.daily-name {
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+.daily-sansk {
+  font-size: .7rem;
 }

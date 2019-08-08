@@ -13,6 +13,8 @@ class ProfileTop extends Component {
       username: `${this.props.currentUser.username}`,
       showEditPicButton: false,
       file: null,
+      packageInfo: '',
+      result: '',
 
     };
   }
@@ -163,6 +165,40 @@ class ProfileTop extends Component {
     })
   }
 
+  showPackageInfo =() => {
+    if (this.props.currentUser.package.status === 'pending') {
+      return (
+        <div className="package-info">
+          <p>Interested in {this.props.currentUser.package.type} class package with {this.props.currentUser.package.classesLeft} classes.</p>
+          <p>Status: {this.props.currentUser.package.status}. We'll contact you shortly.</p>
+          <button onClick={this.handleUndo}>Cancel request</button>
+        </div>
+      )
+    } else if (this.props.currentUser.package.status === 'paid'){
+      return (
+        <div className="package-info">
+          <p>Enrolled in {this.props.currentUser.package.type} class package with {this.props.currentUser.package.classesLeft} classes.</p>
+          <p>Status: {this.props.currentUser.package.status}. Enjoy!</p>
+        </div>
+      )
+    }
+  }
+
+  handleUndo = () => {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/`+this.props.currentUser._id, {
+      status: '',
+      type: '', 
+      classesLeft: '',
+    })
+    .then(response=> {
+      this.props.getCurrentUser()
+      this.setState({result: `OK, we won't bother you.`}) ;
+    })
+    .catch(err=> {
+      console.log(err);
+    })
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -173,7 +209,12 @@ class ProfileTop extends Component {
         </div>
        
       {this.state.isEditing ? this.showEditFields() : this.showInfo()}
-      <div className="delete-button-wrapper">
+
+      {/* that's package info */}
+      <div className="package-info-wrapper">
+        {this.state.result && <p>{this.state.result}</p>}
+      {this.showPackageInfo()}
+
     </div>
       </div>
     );

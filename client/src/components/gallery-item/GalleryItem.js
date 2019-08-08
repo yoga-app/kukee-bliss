@@ -11,11 +11,12 @@ class GalleryItem extends Component {
       title: `${this.props.title}`,
       text: `${this.props.text}`,
       picture: null,
-      video: `${this.props.link}`,
+      video: ``,
       category: '',
       isEditing: false,
       refresh: false,
       liked: false,
+      showVideoUploadForm: false,
     }
   }
   
@@ -67,7 +68,11 @@ cancel = (e)=> {
 newVideo = () => {
   return <div>
            <label htmlFor="video">new video:</label>
+           {this.state.video ? 
            <input name="video" id="video" onChange={this.onInputChange} value={this.state.video} />
+           :
+           <input name="video" id="video" onChange={this.onInputChange} placeholder="No video provided" />
+          }
          </div>
 }
 
@@ -78,13 +83,9 @@ newImage = () => {
          </div>
 }
 
-toggleImageVideo = (e, thisAddForm) =>{
+toggleImageVideo = (e) =>{
   e.preventDefault();
-  if(thisAddForm === "image"){
-    this.setState({video: ''})
-  } else {
-    this.setState({video: 'no video selected'})
-  }  
+  this.setState({showVideoUploadForm: !this.state.showVideoUploadForm})
 }
 
 showEditFields() {
@@ -97,8 +98,12 @@ return (
         <input name="title" id="title" onChange={this.onInputChange} value={this.state.title} />
       </div>
 
-      {this.state.video ? this.newVideo() : this.newImage()}
-      {this.state.video ? <button className="image-video-button login-signup small-button" onClick = {(e)=> this.toggleImageVideo(e,'image')}>OR CLICK HERE TO SWAP IT FOR AN IMAGE</button> : <button className="image-video-button login-signup small-button" onClick = {(e)=> this.toggleImageVideo(e,'video')}>OR CLICK HERE TO SWAP IT FOR A VIDEO</button>}
+      {this.state.showVideoUploadForm ? this.newVideo() : this.newImage()}
+      {this.state.showVideoUploadForm ? 
+      <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR AN IMAGE</button> 
+      : 
+      <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR A VIDEO</button>
+      }
 
       <div>
         <label htmlFor="title">new categories:</label>

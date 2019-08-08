@@ -85,7 +85,6 @@ class App extends React.Component {
           hideLoginAndSignupForms={this.hideLoginAndSignupForms}
         />
       </BreakpointProvider>
-        
 
         {this.state.signupShowing && 
           <Signup
@@ -100,7 +99,6 @@ class App extends React.Component {
             toggleForm = {this.toggleForm}
           />
         }
-
         <Switch>
 
           <Route exact path="/profile" render ={(props)=> 

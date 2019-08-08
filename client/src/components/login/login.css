@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 500px;
-  height: 155px;
+  height: 195px;
   background-color: rgba(241, 203, 170, 0.89);
   padding: 30px;
 }
@@ -34,4 +34,21 @@
 .form-login label {
   font-size: 1.5rem;
   padding-bottom: .3rem;
+}
+
+.error-message {
+  height: 30px;
+  padding: 3px;
+}
+.error-span {
+  animation-name: fadeAway;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeAway {
+  0% {opacity: 1}
+  100% {opacity: 0; display: none;}
 }

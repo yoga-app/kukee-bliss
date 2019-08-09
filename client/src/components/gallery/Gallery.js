@@ -3,6 +3,7 @@ import './gallery.css';
 import GalleryItem from '../gallery-item/GalleryItem';
 import axios from 'axios';
 import AddGalleryItem from '../gallery-item/AddGalleryItem';
+import { BreakpointProvider } from 'react-socks';
 
 
 class Gallery extends Component {
@@ -31,18 +32,20 @@ class Gallery extends Component {
   showGalItems() {
     return this.state.allGalItems.map(eachI=> {
       return (
-        <GalleryItem 
-        key={eachI._id}
-        id={eachI._id}
-        link={eachI.video}
-        picture={eachI.picture}
-        title={eachI.title}
-        text={eachI.text}
-        categoryArray={eachI.category}
-        updateGallery={this.updateGallery}
-        theUser={this.props.theUser}
-        likedByArr={eachI.likedBy}
-        />
+        <BreakpointProvider>
+          <GalleryItem 
+          key={eachI._id}
+          id={eachI._id}
+          link={eachI.video}
+          picture={eachI.picture}
+          title={eachI.title}
+          text={eachI.text}
+          categoryArray={eachI.category}
+          updateGallery={this.updateGallery}
+          theUser={this.props.theUser}
+          likedByArr={eachI.likedBy}
+          />
+        </BreakpointProvider>
       )
     })
   }

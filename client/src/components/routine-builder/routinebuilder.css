@@ -144,3 +144,74 @@
 .daily-sansk {
   font-size: .7rem;
 }
+
+@media (max-width: 767px) {
+
+  .routine-builder {
+    margin: 20px;
+    width: 360px;
+    padding-bottom: 10px;
+  }
+
+  .routine-builder h4 {
+    padding: 15px 0 5px 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .assigning-section {
+    margin: 15px;
+  }
+
+  .routine-builder .each-asana-builder-wrapper {
+    height: 45px;
+    width: 45px;
+    margin: 5px;
+  }
+  
+  .routine-builder .daily-builder-asana {
+    width: 50px;
+    position: absolute;
+  }
+  
+  .routine-builder .daily-sansk, .routine-builder .daily-name {
+    display: none;
+  }
+
+  .routine-builder .form-wrapper label {
+    display: none;
+  }
+
+  .routine-builder .form-wrapper input {
+    width: 240px;
+  }
+  
+  .builder {
+    margin: 0;
+    align-content: center;
+    justify-content: center;
+    min-height: 142px;
+  }
+  
+  .asanas-list-builder-wrapper {
+    margin: 25px;
+  }
+  
+  .all-users-list-wrapper {
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .one-user-wrapper {
+    width: 60px;
+    height: fit-content;
+    min-height: 90px;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: 500;
+  }
+
+  .builder-buttons {
+    margin-top: 10px;
+  }
+}

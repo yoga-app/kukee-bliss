@@ -33,6 +33,8 @@
   box-shadow: 1px 1px 3px gray;
   padding: 30px;
   width: 330px;
+  height: fit-content;
+  min-height: 400px;
   margin: 25px 5px;
   display: flex;
   flex-direction: column;

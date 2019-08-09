@@ -13,7 +13,7 @@ class ProgressTracker extends Component {
   }
   
   componentDidMount() {
-    axios.get('http://localhost:5000/api/auth/getallusers')
+    axios.get(`${process.env.REACT_APP_BASE}api/auth/getallusers`)
     .then((response)=> {
       let temp = response.data.filter(eachU => {
         return (eachU.package && eachU.package.status === "pending")
@@ -29,7 +29,7 @@ class ProgressTracker extends Component {
   }
 
   updateUserList() {
-    axios.get('http://localhost:5000/api/auth/getallusers')
+    axios.get(`${process.env.REACT_APP_BASE}api/auth/getallusers`)
     .then((response)=> {
       let temp = response.data.filter(eachU => {
         return (eachU.package && eachU.package.status === "pending")
@@ -45,7 +45,7 @@ class ProgressTracker extends Component {
   }
 
   onCancel = (userID) => {
-    axios.post('http://localhost:5000/api/auth/updateuserpackage/' + userID, {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/` + userID, {
       status: '',
       type: '', 
       classesLeft: '',
@@ -60,7 +60,7 @@ class ProgressTracker extends Component {
   }
 
   onPaid = (userID, type, classesLeft) => {
-    axios.post('http://localhost:5000/api/auth/updateuserpackage/' + userID, {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/` + userID, {
       status: 'paid',
       type: type, 
       classesLeft: classesLeft,
@@ -75,7 +75,7 @@ class ProgressTracker extends Component {
   }
 
   onPending = (userID, type, classesLeft) => {
-    axios.post('http://localhost:5000/api/auth/updateuserpackage/' + userID, {
+    axios.post(`${process.env.REACT_APP_BASE}api/auth/updateuserpackage/` + userID, {
       status: 'pending',
       type: type, 
       classesLeft: classesLeft,

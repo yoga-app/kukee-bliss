@@ -81,7 +81,11 @@ toggleImageVideo = (e, thisAddForm) =>{
           </div>
           
           {this.state.videoInput ? this.addVideo() : this.addImage()}
-          {this.state.videoInput ? <button className="image-video-button login-signup small-button" onClick = {(e)=> this.toggleImageVideo(e,'image')}>OR CLICK HERE TO ADD AN IMAGE</button> : <button className="image-video-button login-signup small-button" onClick = {(e)=> this.toggleImageVideo(e,'video')}>OR CLICK HERE TO ADD A VIDEO</button>}
+          {this.state.videoInput ? 
+          <button className="image-video-button login-signup small-button" onClick = {(e)=> this.toggleImageVideo(e,'image')}>OR CLICK HERE TO ADD AN IMAGE</button>
+           : 
+           <button className="image-video-button login-signup small-button" onClick = {(e)=> this.toggleImageVideo(e,'video')}>OR CLICK HERE TO ADD A VIDEO</button>
+           }
           <div>
             <label htmlFor="category">categories: </label>
             <input name="category" id="category" onChange={this.onInputChange} value={this.state.category}/>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GalleryItem from '../gallery-item/GalleryItem';
 import './private-gallery.css';
+import { BreakpointProvider } from 'react-socks';
 
 class PrivateGallery extends Component {
 
@@ -16,18 +17,20 @@ class PrivateGallery extends Component {
     this.props.getCurrentUser()
     return this.props.currentUser.favoritedItems.map(eachI=> {
       return (
-        <GalleryItem 
-        key={eachI._id}
-        id={eachI._id}
-        link={eachI.video}
-        picture={eachI.picture}
-        title={eachI.title}
-        text={eachI.text}
-        categoryArray={eachI.category}
-        updateGallery={this.props.getCurrentUser}
-        theUser={this.props.currentUser}
-        likedByArr={eachI.likedBy}
-        />
+        <BreakpointProvider>
+          <GalleryItem 
+          key={eachI._id}
+          id={eachI._id}
+          link={eachI.video}
+          picture={eachI.picture}
+          title={eachI.title}
+          text={eachI.text}
+          categoryArray={eachI.category}
+          updateGallery={this.props.getCurrentUser}
+          theUser={this.props.currentUser}
+          likedByArr={eachI.likedBy}
+          />
+        </BreakpointProvider>
       )
     })
   }

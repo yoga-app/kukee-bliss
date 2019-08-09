@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './gallery-item.css';
 import axios from 'axios';
 import Button from "../button/Button";
+import Breakpoint from 'react-socks';
 
 class GalleryItem extends Component {
   constructor(props) {
@@ -188,19 +189,40 @@ showInfo() {
   <h3>{this.props.title}</h3>
   
 
-  {this.props.link ? 
+
   
+
+<Breakpoint small down>
+{this.props.link ? 
   <iframe className="gallery-video" title="video"
   //change this size for youtube embed video. Keep 16:9 ratio
+  width="336" height="189" 
+  src={this.props.link}
+  frameBorder="0" 
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+  allowFullScreen></iframe>
+    :
+  <img src={this.props.picture} className="gallery-image" alt="gallery item"/>
+  }
+</Breakpoint>
+<Breakpoint medium up>
+{this.props.link ? 
+  <iframe className="gallery-video" title="video"
   width="448" height="252" 
   src={this.props.link}
   frameBorder="0" 
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
   allowFullScreen></iframe>
-  
-  :
+    :
   <img src={this.props.picture} className="gallery-image" alt="gallery item"/>
   }
+</Breakpoint>
+
+
+
+
+  
+
   {this.props.theUser && (this.state.liked ? 
     <div className="like-button-div">
       <button className="like-button liked" onClick={this.removeLike}>♥</button>

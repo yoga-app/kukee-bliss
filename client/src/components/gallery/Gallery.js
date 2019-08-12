@@ -30,11 +30,11 @@ class Gallery extends Component {
   }
 
   showGalItems() {
-    return this.state.allGalItems.map(eachI=> {
+    return this.state.allGalItems.map((eachI, index)=> {
       return (
         <BreakpointProvider>
           <GalleryItem 
-          key={eachI._id}
+          key={eachI._id + index}
           id={eachI._id}
           link={eachI.video}
           picture={eachI.picture}

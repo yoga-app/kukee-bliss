@@ -6,7 +6,7 @@ import Testimonial from '../testimonial/Testimonial.js';
 import Slogan from '../slogan/Slogan.js';
 import axios from 'axios';
 import Mandala from '../mandala/Mandala';
-import Breakpoint, { BreakpointProvider } from 'react-socks';
+import { BreakpointProvider } from 'react-socks';
 
 
 

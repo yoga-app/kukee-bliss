@@ -48,12 +48,12 @@
 }
 
 .gallery-video {
-  outline: 6px solid rgba(65, 59, 61, 0.336);
+  outline: 3px solid rgba(65, 59, 61, 0.336);
 }
 
 .gallery-image {
-  width: 447px;
-  outline: 6px solid rgba(65, 59, 61, 0.336);
+  width: 336px;
+  outline: 3px solid rgba(65, 59, 61, 0.336);
 }
 
 .toggle-image-video-buttons > *:focus {
@@ -121,11 +121,12 @@
 .delete-edit-buttons-gallery {
   display: flex;
   width: 105px;
+  margin-bottom: 10px;
   justify-content: space-between;
 }
 
 .categories {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .edit-gallery-item {

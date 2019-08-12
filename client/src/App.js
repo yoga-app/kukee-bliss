@@ -14,7 +14,7 @@ import Newsletter from './components/newsletter/Newsletter';
 import Gallery from './components/gallery/Gallery';
 import Faq from './components/faq/Faq';
 import PasswordRecovery from './components/password-recovery/PasswordRecovery';
-import Breakpoint, { BreakpointProvider } from 'react-socks';
+import { BreakpointProvider } from 'react-socks';
 
 
 

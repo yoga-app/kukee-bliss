@@ -11,3 +11,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+@media (max-width: 767px) {
+  .home {
+    top: 0;
+  }
+}

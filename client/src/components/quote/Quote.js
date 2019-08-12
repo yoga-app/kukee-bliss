@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './quote.css';
-import Breakpoint, { BreakpointProvider } from 'react-socks';
+import Breakpoint  from 'react-socks';
 
 class Quote extends Component {
   render() {

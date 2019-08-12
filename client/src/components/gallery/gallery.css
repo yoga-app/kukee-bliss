@@ -18,3 +18,9 @@
 .gallery-flex > div > div {
   margin: 10px;
 }
+
+@media (max-width: 767px) {
+  .gallery-flex > div {
+    margin: 20px;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './testimonial.css';
-import Breakpoint, { BreakpointProvider } from 'react-socks';
+import Breakpoint from 'react-socks';
 
 class Testimonial extends Component {
   render() {

@@ -8,7 +8,7 @@ import Docs from '../docs/Docs.js';
 import axios from 'axios';
 import RoutineBuilder from '../routine-builder/RoutineBuilder';
 import DailyRoutine from '../daily-routine/DailyRoutine';
-import Breakpoint, { BreakpointProvider } from 'react-socks';
+import { BreakpointProvider } from 'react-socks';
 
 class Profile extends Component {
   constructor(props) {

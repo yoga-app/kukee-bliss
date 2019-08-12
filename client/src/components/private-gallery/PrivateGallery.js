@@ -15,11 +15,11 @@ class PrivateGallery extends Component {
   
   showGalItems() {
     this.props.getCurrentUser()
-    return this.props.currentUser.favoritedItems.map(eachI=> {
+    return this.props.currentUser.favoritedItems.map((eachI, index)=> {
       return (
         <BreakpointProvider>
           <GalleryItem 
-          key={eachI._id}
+          key={index + eachI._id}
           id={eachI._id}
           link={eachI.video}
           picture={eachI.picture}

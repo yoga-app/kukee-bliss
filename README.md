@@ -20,55 +20,55 @@ GMAILPASS=...
 
 ### Models
 
-####User(Full CRUD)
-  Level (enum only can be)
-    yogi
-    guruji
-  First name
-  username (email)
-  password
-  Last name
-  picture
-  favoritedItems: [{type: Schema.Types.ObjectId, ref: 'GalleryItem'}]
-  subscription
-    startedDate
-    endDate
-  package
-  classesLeft
-  type (enum only can be)
-    beginner
-    medium
-    advanced
-####Comments(Full CRUD)
-title
-text
-created_at
-author
-edited: Boolean
-Liked: Number
-####Quote
-text
-author
-####FAQ (Full CRUD)
-question
-answer
-####Testiimonials(Full CRUD)
-text
-author
-picture
-rating
-attended
-####Gallery Item(Full CRUD)
-picture:String,  
-video: String,
-title: String,
-text: String,
-category: [{type: String}],
-likedBy: Array of UserIds
+#### User(Full CRUD)
+  - Level (enum only can be)
+    - yogi
+    - guruji
+  - First name
+  - username (email)
+  - password
+  - Last name
+  - picture
+  - favoritedItems: [{type: Schema.Types.ObjectId, ref: 'GalleryItem'}]
+  - subscription
+    - startedDate
+    - endDate
+  - package
+  - classesLeft
+ - type (enum only can be)
+    - beginner
+    - medium
+    - advanced
+#### Comments(Full CRUD)
+- title
+- text
+- created_at
+- author
+- edited: Boolean
+- Liked: Number
+#### Quote
+- text
+- author
+#### FAQ (Full CRUD)
+- question
+- answer
+#### Testiimonials(Full CRUD)
+- text
+- author
+- picture
+- rating
+- attended
+#### Gallery Item(Full CRUD)
+- picture:String,  
+- video: String,
+- title: String,
+- text: String,
+- category: [{type: String}],
+- likedBy: Array of UserIds
 
-##Routes
+## Routes
 
-###GET /quote/randomQuote
+### GET /quote/randomQuote
 Response:
 ```
 {
@@ -78,7 +78,7 @@ Response:
     "__v": 0
 }
 ```
-###POST /quote/addQuote
+### POST /quote/addQuote
 expects:
 ```
 text: String

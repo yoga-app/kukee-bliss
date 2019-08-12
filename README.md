@@ -1,5 +1,7 @@
 # MERN Fullstack Application Kukee Bliss Yoga
 
+See readme in a form of [mindmap](https://mind42.com/public/cbb3de54-0e78-43d8-b5fa-6b465066e96f).
+
 ### Files to add
 
 You should have a `server/.env` file, with for example the following values:
@@ -414,7 +416,7 @@ response
     "message": "Deleted successfully"
 }
 ```
-###POST /faq/updatebyid/:id
+### POST /faq/updatebyid/:id
 - expects:
     - question
     - answer

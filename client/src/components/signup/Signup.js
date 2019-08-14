@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import AuthService from '../../services/AuthServices.js';
 import './signup.css';
-import Button from '../button/Button.js'
+import Button from '../button/Button.js';
+import Breakpoint from 'react-socks';
 
 class Signup extends Component {
   constructor(props){
@@ -36,39 +37,69 @@ class Signup extends Component {
   render(){
     return(
       <form className="form" onSubmit = {this.tryToSignUp}>
-        <div>
-          <label>e-mail:</label>
-          <input value={this.state.usernameInput}
-            name="usernameInput"
-            type="email"
-            autoComplete="current-email"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div>
-          <label>password:</label>
-          <input value={this.state.passwordInput} 
-            name="passwordInput"
-            type="password"
-            autoComplete="current-password"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div>
-          <label>first name:</label>
-          <input value={this.state.firstNameInput}
-            name="firstNameInput"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div>
-          <label>last name:</label>
-          <input value={this.state.lastNameInput}
-            name="lastNameInput"
-            onChange={this.handleChange}
-          />
-        </div>
-        <Button text="SIGNUP" class="login-signup"/>
+
+        <Breakpoint small down>  
+          <div>
+            <input placeholder="e-mail" value={this.state.usernameInput}
+              name="usernameInput"
+              type="email"
+              autoComplete="current-email"
+              onChange={this.handleChange}
+            />
+            <input placeholder="password" value={this.state.passwordInput} 
+              name="passwordInput"
+              type="password"
+              autoComplete="current-password"
+              onChange={this.handleChange}
+            />
+            <input placeholder="first name" value={this.state.firstNameInput}
+              name="firstNameInput"
+              onChange={this.handleChange}
+            />
+            <input placeholder="last name" value={this.state.lastNameInput}
+              name="lastNameInput"
+              onChange={this.handleChange}
+            />
+          <Button text="SIGNUP" class="login-signup"/>
+          </div>
+        </Breakpoint>
+
+        <Breakpoint medium up>
+          <div>
+            <label>e-mail:</label>
+            <input value={this.state.usernameInput}
+              name="usernameInput"
+              type="email"
+              autoComplete="current-email"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>password:</label>
+            <input value={this.state.passwordInput} 
+              name="passwordInput"
+              type="password"
+              autoComplete="current-password"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>first name:</label>
+            <input value={this.state.firstNameInput}
+              name="firstNameInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>last name:</label>
+            <input value={this.state.lastNameInput}
+              name="lastNameInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <Button text="SIGNUP" class="login-signup"/>
+        </Breakpoint>
+
       </form>
     )
   }

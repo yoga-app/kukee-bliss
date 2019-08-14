@@ -87,10 +87,12 @@ class App extends React.Component {
       </BreakpointProvider>
 
         {this.state.signupShowing && 
-          <Signup
-            getUser = {this.getCurrentlyLoggedInUser}
-            toggleForm = {this.toggleForm}
-          />
+          <BreakpointProvider>
+            <Signup
+              getUser = {this.getCurrentlyLoggedInUser}
+              toggleForm = {this.toggleForm}
+            />
+          </BreakpointProvider>
         }
 
         {this.state.loginShowing && 

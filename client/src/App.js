@@ -115,14 +115,20 @@ class App extends React.Component {
           :
           <Redirect to="/" />}
           />
+          <BreakpointProvider>
+            <Route exact path="/aboutus" component={AboutUs}/>
+          </BreakpointProvider>
 
-          <Route exact path="/aboutus" component={AboutUs}/>
           <Route exact path="/" component={Main}/>
           <Route exact path="/classes" render ={(props)=> 
-            <Classes
-              {...props} 
-              theUser = {this.state.currentlyLoggedIn}
-              getCurrentUser = {this.getCurrentlyLoggedInUser}/>}/>
+            <BreakpointProvider>
+              <Classes
+                {...props} 
+                theUser = {this.state.currentlyLoggedIn}
+                getCurrentUser = {this.getCurrentlyLoggedInUser}
+              />
+            </BreakpointProvider>    
+          }/>
               
           <Route exact path="/newsletter" component={Newsletter}/>
 

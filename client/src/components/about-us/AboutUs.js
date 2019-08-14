@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './about-us.css';
-import MapContainer from '../googleMap/MapContainer.js'
+import MapContainer from '../googleMap/MapContainer.js';
+import Breakpoint from 'react-socks';
 
 class AboutUs extends Component {
   render() {
@@ -47,7 +48,12 @@ class AboutUs extends Component {
             <p>Chris Chiropractic Services</p>
             <p>100, E Lee Road, Suite D, Taylors, SC 29687</p>
           </div>
-          <MapContainer width={'650px'} height={'450px'}/>
+          <Breakpoint small down>
+            <MapContainer width={'300px'} height={'200px'}/>
+          </Breakpoint>
+          <Breakpoint medium up>
+            <MapContainer width={'650px'} height={'450px'}/>
+          </Breakpoint>
         </div>
       </div>
     );

@@ -104,56 +104,52 @@ class App extends React.Component {
           </BreakpointProvider>
         }
         <Switch>
-
-          <Route exact path="/profile" render ={(props)=> 
-            this.state.currentlyLoggedIn ? 
-            <Profile
-              {...props} 
-              theUser = {this.state.currentlyLoggedIn}
-              getCurrentUser = {this.getCurrentlyLoggedInUser}
-            /> 
-          :
-          <Redirect to="/" />}
-          />
           <BreakpointProvider>
-            <Route exact path="/aboutus" component={AboutUs}/>
-          </BreakpointProvider>
 
-          <Route exact path="/" component={Main}/>
-          <Route exact path="/classes" render ={(props)=> 
-            <BreakpointProvider>
-              <Classes
+            <Route exact path="/profile" render ={(props)=> 
+              this.state.currentlyLoggedIn ? 
+              <Profile
                 {...props} 
                 theUser = {this.state.currentlyLoggedIn}
                 getCurrentUser = {this.getCurrentlyLoggedInUser}
-              />
-            </BreakpointProvider>    
-          }/>
-              
-          <Route exact path="/newsletter" component={Newsletter}/>
+              /> 
+            :
+            <Redirect to="/" />}
+            />
+              <Route exact path="/aboutus" component={AboutUs}/>
 
-          <Route exact path="/gallery" render ={(props)=> 
+            <Route exact path="/" component={Main}/>
+            <Route exact path="/classes" render ={(props)=> 
+                <Classes
+                  {...props} 
+                  theUser = {this.state.currentlyLoggedIn}
+                  getCurrentUser = {this.getCurrentlyLoggedInUser}
+                  />
+            }/>
+                
+            <Route exact path="/newsletter" component={Newsletter}/>
 
-            <BreakpointProvider>
-              <Gallery
-                {...props} 
-                theUser = {this.state.currentlyLoggedIn}
-                getCurrentUser = {this.getCurrentlyLoggedInUser}
-                />
-            </BreakpointProvider>
-                }/>
-              
-          <Route exact path="/faq" render ={(props)=> 
-            <Faq
+            <Route exact path="/gallery" render ={(props)=> 
+                <Gallery
+                  {...props} 
+                  theUser = {this.state.currentlyLoggedIn}
+                  getCurrentUser = {this.getCurrentlyLoggedInUser}
+                  />
+                  }/>
+                
+            <Route exact path="/faq" render ={(props)=> 
+              <Faq
               {...props} 
               theUser = {this.state.currentlyLoggedIn}
               getCurrentUser = {this.getCurrentlyLoggedInUser}/>}/>
 
-          <Route exact path="/forgot-password-email" component={PasswordRecovery}/>
-              
-          <Route exact path="/forgot-password-update/:id" render ={(props)=> 
-            <PasswordRecovery {...props} forReset />}/>
+            <Route exact path="/forgot-password-email" component={PasswordRecovery}/>
+                
+            <Route exact path="/forgot-password-update/:id" render ={(props)=> 
+              <PasswordRecovery {...props} forReset />}
+            />
 
+          </BreakpointProvider>
         </Switch>
         <BreakpointProvider>      
           <Footer />

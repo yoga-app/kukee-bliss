@@ -32,7 +32,7 @@
     letter-spacing: -.5rem;
   }
   100% {
-    letter-spacing: 0;
+    letter-spacing: -.09rem;
   }
 }
 

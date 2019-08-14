@@ -94,10 +94,12 @@ class App extends React.Component {
         }
 
         {this.state.loginShowing && 
-          <Login
-            getUser = {this.getCurrentlyLoggedInUser}
-            toggleForm = {this.toggleForm}
-          />
+          <BreakpointProvider>
+            <Login
+              getUser = {this.getCurrentlyLoggedInUser}
+              toggleForm = {this.toggleForm}
+            />
+          </BreakpointProvider>
         }
         <Switch>
 
@@ -123,11 +125,15 @@ class App extends React.Component {
           <Route exact path="/newsletter" component={Newsletter}/>
 
           <Route exact path="/gallery" render ={(props)=> 
-            <Gallery
-              {...props} 
-              theUser = {this.state.currentlyLoggedIn}
-              getCurrentUser = {this.getCurrentlyLoggedInUser}/>}
-              />
+
+            <BreakpointProvider>
+              <Gallery
+                {...props} 
+                theUser = {this.state.currentlyLoggedIn}
+                getCurrentUser = {this.getCurrentlyLoggedInUser}
+                />
+            </BreakpointProvider>
+                }/>
               
           <Route exact path="/faq" render ={(props)=> 
             <Faq

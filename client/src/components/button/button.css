@@ -47,3 +47,12 @@
   justify-content: center;
   margin-top: 5px;
 }
+
+@media (max-width: 767px) {
+
+  .login-signup {
+    color: #413B3D;
+    background-color: #ffffffe5;
+    border: 2px solid #413B3D;
+  }
+}

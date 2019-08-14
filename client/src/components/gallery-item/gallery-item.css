@@ -1,27 +1,27 @@
 .gallery-card {
-  background-color: #ad692a7e;
-  border-radius: 5px;
+  background-color: rgba(66, 122, 121, 0.212);
+  border-radius: 20px;
   margin-bottom: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 470px;
+  width: 340px;
   align-items: center;
 }
 
 .gallery-card h3 {
   position: relative;
   border-radius: 5px;
-  padding: 10px;
-  top: -25px;
+  padding: 15px 0;
+  /* top: -25px; */
   text-align: center;
   font-size: 2.2rem;
   font-weight: 500;
-  background-color: rgba(65, 59, 61, 0.877);
+  background-color: transparent;
   margin: 0;
-  color: #ffffff;
-  width: 441px;
+  color: #413B3D;
+  width: fit-content;
 }
 
 .gallery-category {
@@ -30,7 +30,7 @@
   padding: .3rem .5rem;
   color: #413B3D;
   font-weight: 400;
-  background-color: #ecdbcb;
+  background-color: white;
   margin: 3px;
   font-size: 14px;
 }
@@ -102,7 +102,7 @@
 
 .like-button {
   position: relative;
-  left: 200px;
+  left: 140px;
   top: 10px;
   background-color: #00000000;
   border: none;
@@ -115,7 +115,6 @@
   height: 40px;
   display: flex;
   justify-content: center;
-  /* border: 1px solid black; */
 }
 
 .delete-edit-buttons-gallery {
@@ -139,4 +138,34 @@
 
 .edit-gallery-item .image-video-button {
   top: 116px;
+}
+
+@media (max-width: 767px) {
+  .form-add-video-image {
+    position: absolute;
+    top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 310px;
+  }
+
+  .form-add-video-image input {
+    width: 300px;
+  }
+
+  .image-video-button {
+    position: static;
+    margin-left: 10px;
+    margin-top: -5px;
+  }
+
+  .gallery-card {
+    margin: 5px 3px 15px 3px;
+  }
+
+  .gallery > div > div:last-child > div {
+    margin-bottom: 5px;
+  }
 }

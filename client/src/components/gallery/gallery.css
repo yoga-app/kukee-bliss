@@ -23,4 +23,21 @@
   .gallery-flex > div {
     margin: 20px;
   }
+
+  .gallery {
+    margin: 370px 10px;
+    border: 4px solid #d1b397;
+    border-radius: 20px;
+    padding: 0 0;
+    width: 365px;
+  }  
+
+  .no-form {
+    margin-top: 50px;
+  }
+
+  .gallery h4 {
+    padding: 10px 0 0 0;
+  }  
+
 }

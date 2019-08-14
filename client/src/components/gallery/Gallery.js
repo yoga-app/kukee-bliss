@@ -3,7 +3,7 @@ import './gallery.css';
 import GalleryItem from '../gallery-item/GalleryItem';
 import axios from 'axios';
 import AddGalleryItem from '../gallery-item/AddGalleryItem';
-import { BreakpointProvider } from 'react-socks';
+import Breakpoint, { BreakpointProvider } from 'react-socks';
 
 
 class Gallery extends Component {
@@ -55,14 +55,29 @@ class Gallery extends Component {
  
     return (
       <div>
-        <div className={this.props.theUser && this.props.theUser.isAdmin ? "gallery" : "gallery-flex gallery"}>
+        <Breakpoint small down>
+        <div className={this.props.theUser && this.props.theUser.isAdmin ? "gallery" : "no-form gallery"}>
 
-          <div>
-            {this.state.ready ? this.showGalItems() : <div>Loading ... </div>}
+            <div>
+              {this.state.ready ? this.showGalItems() : <div>Loading ... </div>}
+            </div>
+            <BreakpointProvider>
+              {this.props.theUser && this.props.theUser.isAdmin && <AddGalleryItem updateGallery={this.updateGallery}/>}
+            </BreakpointProvider>
           </div>
-        
-          {this.props.theUser && this.props.theUser.isAdmin && <AddGalleryItem updateGallery={this.updateGallery}/>}
-        </div>
+        </Breakpoint>
+        <Breakpoint medium up>
+          <div className={this.props.theUser && this.props.theUser.isAdmin ? "gallery" : "gallery-flex gallery"}>
+
+            <div>
+              {this.state.ready ? this.showGalItems() : <div>Loading ... </div>}
+            </div>
+            <BreakpointProvider>
+              {this.props.theUser && this.props.theUser.isAdmin && <AddGalleryItem updateGallery={this.updateGallery}/>}
+            </BreakpointProvider>
+          </div>
+        </Breakpoint>
+
       </div>
     );
 

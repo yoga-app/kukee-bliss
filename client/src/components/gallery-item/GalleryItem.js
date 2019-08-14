@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './gallery-item.css';
 import axios from 'axios';
 import Button from "../button/Button";
-import Breakpoint from 'react-socks';
+// import Breakpoint from 'react-socks';
 
 class GalleryItem extends Component {
   constructor(props) {
@@ -93,33 +93,68 @@ showEditFields() {
 return (
 
   <div className="add-gallery-item edit-gallery-item">
-    <form className="form-add-video-image" onSubmit={this.submitEditForm}>
-      <div>
-        <label htmlFor="title">new title:</label>
-        <input name="title" id="title" onChange={this.onInputChange} value={this.state.title} />
-      </div>
 
-      {this.state.showVideoUploadForm ? this.newVideo() : this.newImage()}
-      {this.state.showVideoUploadForm ? 
-      <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR AN IMAGE</button> 
-      : 
-      <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR A VIDEO</button>
-      }
+{/* uncomment Breakpoints to style mobile version */}
 
-      <div>
-        <label htmlFor="title">new categories:</label>
-        <input name="category" onChange={this.onInputChange} value={this.state.category} />
-      </div>
+    {/* <Breakpoint small down> */}
+      <form className="form-add-video-image" onSubmit={this.submitEditForm}>
+        <div>
+          <label htmlFor="title">new title:</label>
+          <input name="title" id="title" onChange={this.onInputChange} value={this.state.title} />
+        </div>
 
-      <div>
-        <label htmlFor="text">new description:</label>
-        <input name="text" id="text" onChange={this.onInputChange} value={this.state.text} />
-      </div>
-      <div>
-        <Button text="UPDATE" class="login-signup" />
-        <button className="cancel-update-gallery login-signup small-button" onClick={(e)=>{this.cancel(e)}}>CANCEL</button>
-      </div>
-    </form>
+        {this.state.showVideoUploadForm ? this.newVideo() : this.newImage()}
+        {this.state.showVideoUploadForm ? 
+        <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR AN IMAGE</button> 
+        : 
+        <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR A VIDEO</button>
+        }
+
+        <div>
+          <label htmlFor="title">new categories:</label>
+          <input name="category" onChange={this.onInputChange} value={this.state.category} />
+        </div>
+
+        <div>
+          <label htmlFor="text">new description:</label>
+          <input name="text" id="text" onChange={this.onInputChange} value={this.state.text} />
+        </div>
+        <div>
+          <Button text="UPDATE" class="login-signup" />
+          <button className="cancel-update-gallery login-signup small-button" onClick={(e)=>{this.cancel(e)}}>CANCEL</button>
+        </div>
+      </form>
+    {/* </Breakpoint>
+    
+    <Breakpoint medium up>
+      <form className="form-add-video-image" onSubmit={this.submitEditForm}>
+        <div>
+          <label htmlFor="title">new title:</label>
+          <input name="title" id="title" onChange={this.onInputChange} value={this.state.title} />
+        </div>
+
+        {this.state.showVideoUploadForm ? this.newVideo() : this.newImage()}
+        {this.state.showVideoUploadForm ? 
+        <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR AN IMAGE</button> 
+        : 
+        <button className="image-video-button login-signup small-button" onClick = {this.toggleImageVideo}>OR CLICK HERE TO SWAP IT FOR A VIDEO</button>
+        }
+
+        <div>
+          <label htmlFor="title">new categories:</label>
+          <input name="category" onChange={this.onInputChange} value={this.state.category} />
+        </div>
+
+        <div>
+          <label htmlFor="text">new description:</label>
+          <input name="text" id="text" onChange={this.onInputChange} value={this.state.text} />
+        </div>
+        <div>
+          <Button text="UPDATE" class="login-signup" />
+          <button className="cancel-update-gallery login-signup small-button" onClick={(e)=>{this.cancel(e)}}>CANCEL</button>
+        </div>
+      </form>
+    </Breakpoint> */}
   </div>
 )
 }

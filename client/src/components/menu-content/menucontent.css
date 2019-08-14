@@ -4,6 +4,28 @@
 
 .menu-item {
   border-bottom: 1px solid #ddd;
+  height: 85px;
+  font-size: 1.2rem;
+}
+
+.menu-item > * {
+  line-height: 85px;
+  height: 85px;
+}
+
+.menu-item > * {
+  height: 85px;
+  line-height: 85px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item > span > * {
+  width: 95%;
+  margin-left: 15px;
+  height: 100%;
+  text-align: left;
+  padding: 0;
 }
 
 .menu-item a {
@@ -13,7 +35,7 @@
   text-decoration: none;
 }
 
-.menu-item a:hover {
+.menu-item:hover {
   color: inherit;
   text-decoration: none;
   background-color: #eee;
@@ -42,4 +64,8 @@
 .d-flex {
   display: flex;
   justify-content: center;
+}
+
+.menu-item button:hover {
+  color: #413B3D;
 }

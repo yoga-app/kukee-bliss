@@ -16,24 +16,25 @@ class MenuContent extends Component {
   render() {
     return (
       <div className="menu">
+          {this.props.theUser && 
+          <div className="menu-item">
+            <NavLink to="/profile" activeClassName="nav-link-active" 
+            className="nav-link profile"
+            >
+              <img className="profile-pic" alt="profile" src={this.props.theUser.picture} />
+                {this.props.theUser.firstName}
+            </NavLink>
+          </div>
+          }
+          
         <div className="menu-item">
           <NavLink exact to="/" 
         activeClassName="nav-link-active" 
         className="nav-link"
         onClick={this.props.closeCallback}> home</NavLink>
         </div>
-        {this.props.theUser && 
-        <div className="menu-item">
-          <NavLink to="/profile" activeClassName="nav-link-active" 
-          className="nav-link profile"
-          >
-            <img className="profile-pic" alt="profile" src={this.props.theUser.picture} />
-            <div>
-              {this.props.theUser.firstName} {this.props.theUser.lastName}
-            </div>
-          </NavLink>
-        </div>
-        }
+
+
         {this.props.theUser ? 
         <div className="menu-item"> 
           <span>

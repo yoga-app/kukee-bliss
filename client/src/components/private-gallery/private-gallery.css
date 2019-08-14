@@ -40,5 +40,9 @@
 
   .private-gallery h4 {
     padding: 10px 0 0 0;
-  }  
+  }
+
+  /* .private-gallery .gallery-card:last-child {
+    margin-bottom: 10px;
+  } */
 }

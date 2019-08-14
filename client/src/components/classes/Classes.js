@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './classes.css';
 import axios from 'axios';
+import Breakpoint from 'react-socks';
 
 class Classes extends Component {
   constructor(props) {
@@ -73,18 +74,31 @@ class Classes extends Component {
         <div className="schedule">
           <h4>Schedule</h4>
           <ul>
-            <li>
-              <p>[ Wednesdays ]</p>
-              <p><span className="each-class">Restorative Yoga:</span> 6:45pm-7:30pm</p>
-            </li>
-            <li>
-              <p>[ Fridays ]</p>
-              <p><span className="each-class">Chair Yoga:</span> 9:30am-10:15am</p>
-            </li>
-            <li>
-              <p>[ Sundays ]</p>
-              <p><span className="each-class">Power Yoga:</span> 7:00pm-7:45pm</p>
-            </li>
+            <Breakpoint small down>
+              <li>
+                <p><span className="each-class">Restorative Yoga:</span> WED 6:45pm-7:30pm</p>
+              </li>
+              <li>
+                <p><span className="each-class">Chair Yoga:</span> FRI 9:30am-10:15am</p>
+              </li>
+              <li>
+                <p><span className="each-class">Power Yoga:</span> SUN 7:00pm-7:45pm</p>
+              </li>
+            </Breakpoint>
+            <Breakpoint medium up>
+              <li>
+                <p>[ Wednesdays ]</p>
+                <p><span className="each-class">Restorative Yoga:</span> 6:45pm-7:30pm</p>
+              </li>
+              <li>
+                <p>[ Fridays ]</p>
+                <p><span className="each-class">Chair Yoga:</span> 9:30am-10:15am</p>
+              </li>
+              <li>
+                <p>[ Sundays ]</p>
+                <p><span className="each-class">Power Yoga:</span> 7:00pm-7:45pm</p>
+              </li>
+            </Breakpoint>
           </ul>
         </div>
       </div>

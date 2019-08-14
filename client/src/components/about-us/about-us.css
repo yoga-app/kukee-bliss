@@ -49,12 +49,22 @@
   margin: 0 0 1.5rem 0;
 }
 
-.color-pallete {
-  /* accent: */
-  color: #6BD5D3;
-  color: #413B3D;
-  /* main: */
-  color: #DF917D;
-  color: #F1CBAA;
-  color: #FDF4F3;
+@media (max-width: 767px) {
+  .about-us {
+    font-size: 1.1rem;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .about-us > * {
+    width: 300px;
+  }
+  
+  .about-us > :nth-child(odd), .about-us > :nth-child(even) {
+    padding: 20px;
+  }
+
+  .map-wrap {
+    height: 400px;
+  }
 }

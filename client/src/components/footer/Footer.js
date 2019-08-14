@@ -20,17 +20,17 @@ class Footer extends Component {
             </div>
             <div className="footer-right">
 
-              <p className="builtby-p">
+              <a href="https://www.facebook.com/kukeeblissyoga/" target="_blank" rel="noopener noreferrer"
+              className="social-link">
+              <img src="/images/facebook.svg" alt="" className="social-icon"/>
+              </a>
+              <pre className="builtby-p-mobile">
               Built by <a href="https://github.com/arstrel" target="_blank" rel="noopener noreferrer" className="builtby-link">
               Artem  
               </a> and <a href="https://github.com/taluama" target="_blank" rel="noopener noreferrer" className="builtby-link">
               Talu 
               </a>
-              </p>
-              <a href="https://www.facebook.com/kukeeblissyoga/" target="_blank" rel="noopener noreferrer"
-              className="social-link">
-              <img src="/images/facebook.svg" alt="" className="social-icon"/>
-              </a>
+              </pre>
 
             </div>
           </div>
@@ -38,30 +38,42 @@ class Footer extends Component {
         <Breakpoint medium up>
           <div className="footer">
             <div className="footer-left">
-              <p> Our Mission</p>
-              <p>Kukee Bliss Yoga is founded to put people first and to make yoga available to everyone. </p>
+              {/* <p> Our Mission</p> */}
+              <p>Kukee Bliss Yoga was founded to put people first and to make yoga available to everyone. </p>
             </div>
             <div className="footer-middle">
               <ul>
-                <li><Link to='/faq'>Frequently Asked Questions</Link></li>
-                <li> <Waiver /></li>
-                <li><Liability /></li>
+                <li>
+                  <span className="footer-hover">
+                    <Link to='/faq'>Frequently Asked Questions</Link>
+                  </span>
+                </li>
+                <li>
+                  <span className="footer-hover">
+                    <Waiver />
+                  </span>
+                </li>
+                <li>
+                  <span className="footer-hover">
+                    <Liability />
+                  </span>
+                </li>
               </ul>
             </div>
             <div className="footer-right">
               <a href="https://www.facebook.com/kukeeblissyoga/" target="_blank" rel="noopener noreferrer"
               className="social-link">
-              <img src="/images/facebook.svg" alt="" className="social-icon"/>
-              <span className="social-text">Follow us on Facebook</span>
+                <img src="/images/facebook.svg" alt="" className="social-icon"/>
+                <span className="footer-hover social-text">Follow us on Facebook</span>
               </a>
 
-              <p className="builtby-p">
-              Built by <a href="https://github.com/arstrel" target="_blank" rel="noopener noreferrer" className="builtby-link">
-              Artem  
-              </a> and <a href="https://github.com/taluama" target="_blank" rel="noopener noreferrer" className="builtby-link">
-              Talu 
-              </a>
-              </p>
+              <pre className="builtby-p">
+                Built by <a href="https://github.com/arstrel" target="_blank" rel="noopener noreferrer" className="builtby-link">
+                  Artem
+                </a> and <a href="https://github.com/taluama" target="_blank" rel="noopener noreferrer" className="builtby-link">
+                  Talu 
+                </a>
+              </pre>
 
             </div>
           </div>

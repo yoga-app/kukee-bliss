@@ -77,3 +77,14 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 767px) {
+  .form-login > * > * {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-login {
+    height: 205px;
+  }
+}

@@ -1,4 +1,11 @@
-.form > *, .form-add-video-image > * {
+.form > * {
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-add-video-image > * {
   display: flex;
   justify-content: space-between;
 }

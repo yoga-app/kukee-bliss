@@ -1,5 +1,12 @@
 .form-login > * {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-login > * > * {
+  margin-bottom: 15px;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -13,7 +20,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: 500px;
-  height: 195px;
+  /* height: 195px; */
+  height: 250px;
   background-color: rgba(241, 203, 170, 0.89);
   padding: 30px;
 }

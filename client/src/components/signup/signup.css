@@ -8,6 +8,17 @@
 .form-add-video-image > * {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+
+.form-add-video-image .breakpoint__medium-up {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-add-video-image > * > * {
+  display: flex;
+  justify-content: space-between;
 }
 
 .form, .form-add-video-image {

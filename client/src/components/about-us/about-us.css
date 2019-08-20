@@ -28,7 +28,7 @@
   font-size: 2rem;
 }
 
-.map-wrap > *:nth-child(3) > * {
+.map-wrap > div:nth-child(3) > div > div {
   width: 650px !important;
   height: 450px !important;
 }
@@ -66,5 +66,10 @@
 
   .map-wrap {
     height: 400px;
+  }
+
+  .map-wrap > div:nth-child(3) > div > div {
+    width: 300px !important;
+    height: 200px !important;
   }
 }

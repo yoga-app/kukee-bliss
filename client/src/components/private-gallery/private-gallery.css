@@ -32,6 +32,12 @@
   top: -10px;
 }
 
+@media (min-width: 1440px) {
+  .private-gallery {
+    margin: 30px calc(50% - 700px);
+  }
+}
+
 @media (max-width: 767px) {
   .private-gallery {
     margin: 20px 10px;

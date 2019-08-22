@@ -1,11 +1,16 @@
 .footer, .footer-mobile {
+
+  /* width: 100%; */
+  /* max-width: 1440px; */
+  
+  
   letter-spacing: 0.05rem;
   height: fit-content;
   /* min-height: 120px; */
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding: 20px 40px;
+  padding: 20px calc(50% - 720px) 20px calc(50% - 680px);
   background-color: #ecdbcb;
   line-height: 1.7rem;
 }

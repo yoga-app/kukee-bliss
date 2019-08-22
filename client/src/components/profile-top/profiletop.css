@@ -139,3 +139,9 @@
 .class-status {
   font-weight: 500;
 }
+
+@media (min-width: 1440px) {
+  .user-info {
+    margin: 0 calc(50% - 720px);
+  }
+}

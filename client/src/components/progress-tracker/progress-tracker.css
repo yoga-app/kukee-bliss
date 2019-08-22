@@ -82,6 +82,12 @@ a {
   align-items: flex-end;
 }
 
+@media (min-width: 1440px) {
+  .tracker {
+    margin: 50px calc(50% - 710px) 0 calc(50% - 710px);
+  }
+}
+
 @media (max-width: 767px) {
   .tracker {
     font-size: 1.1rem;

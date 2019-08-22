@@ -67,6 +67,12 @@
   font-weight: 400;
 }
 
+@media (min-width: 1440px) {
+  .classes {
+    margin: 0 calc(50% - 720px);
+  }
+}
+
 @media (max-width: 767px) {
   .classes {
     flex-direction: column;
